@@ -16,6 +16,9 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        quoteLabel.text = "..."
+        authorLabel.text = "-"
+        
         menuButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.menuButtonTouched(_:))))
         menuButton.isUserInteractionEnabled = true
         
@@ -30,8 +33,6 @@ class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        quoteLabel.text = ""
-        authorLabel.text = ""
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 

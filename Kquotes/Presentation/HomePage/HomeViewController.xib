@@ -27,13 +27,15 @@
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="RUM-ud-lCK">
                             <rect key="frame" x="357" y="8" width="25" height="25"/>
+                            <color key="tintColor" systemColor="labelColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="25" id="9e7-gq-Mez"/>
                                 <constraint firstAttribute="height" constant="25" id="nnf-NY-l18"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quote" highlightedImage="logo-splash" translatesAutoresizingMaskIntoConstraints="NO" id="xwZ-h1-X0o">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quote" translatesAutoresizingMaskIntoConstraints="NO" id="xwZ-h1-X0o">
                             <rect key="frame" x="32" y="8" width="25" height="25"/>
+                            <color key="tintColor" systemColor="labelColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="25" id="Lq1-Zk-Xni"/>
                                 <constraint firstAttribute="height" constant="25" id="amX-6A-puy"/>
@@ -88,9 +90,11 @@
         </view>
     </objects>
     <resources>
-        <image name="logo-splash" width="143" height="80"/>
         <image name="menu" width="68" height="51"/>
         <image name="quote" width="33" height="50"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
