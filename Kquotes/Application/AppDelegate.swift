@@ -11,18 +11,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var appDIContainer: AppDIContainer?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.appDIContainer = AppDIContainer()
         
-        let navigationController = UINavigationController()
+        guard let window = window else { return true }
+        guard let transferService = appDIContainer?.apiDataTransferService else { return true }
         
-        navigationController.setViewControllers([HomeViewController()], animated: true)
-
-        window?.rootViewController = navigationController
-        
-        window?.makeKeyAndVisible()
+        let repository = QuoteRepositoryImpl(dataTransferService: transferService)
+        let useCase = FetchRandomQuoteUseCaseImpl(quoteRepository: repository)
+        HomeViewCoordinator.shared.start(data: window, quoteUseCase: useCase)
         
         return true
     }

@@ -15,6 +15,36 @@
 		E5224C652C8AB9CE00E205FD /* KquotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5224C642C8AB9CE00E205FD /* KquotesUITestsLaunchTests.swift */; };
 		E5224C792C8AEE7100E205FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5224C772C8AEE7100E205FD /* HomeViewController.swift */; };
 		E5224C7A2C8AEE7100E205FD /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5224C782C8AEE7100E205FD /* HomeViewController.xib */; };
+		E5224C7E2C8B101600E205FD /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5224C7C2C8B101600E205FD /* SettingViewController.swift */; };
+		E5224C7F2C8B101600E205FD /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5224C7D2C8B101600E205FD /* SettingViewController.xib */; };
+		E564CF992C8ED4D000E48AE1 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CF982C8ED4D000E48AE1 /* BaseCoordinator.swift */; };
+		E564CFA02C8EDC3700E48AE1 /* HomeViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CF9F2C8EDC3700E48AE1 /* HomeViewCoordinator.swift */; };
+		E564CFA32C8EDDB900E48AE1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFA22C8EDDB900E48AE1 /* BaseViewController.swift */; };
+		E564CFA52C8EDEB600E48AE1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFA42C8EDEB600E48AE1 /* BaseViewModel.swift */; };
+		E564CFA72C8EE13200E48AE1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFA62C8EE13200E48AE1 /* HomeViewModel.swift */; };
+		E564CFA92C8EE61F00E48AE1 /* SettingViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFA82C8EE61F00E48AE1 /* SettingViewCoordinator.swift */; };
+		E564CFAB2C8EE67300E48AE1 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFAA2C8EE67300E48AE1 /* SettingViewModel.swift */; };
+		E564CFAF2C8EE72D00E48AE1 /* UIViewControler+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFAE2C8EE72D00E48AE1 /* UIViewControler+Extension.swift */; };
+		E564CFB72C8EF2DE00E48AE1 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFB62C8EF2DE00E48AE1 /* UseCase.swift */; };
+		E564CFBC2C8EF36400E48AE1 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFBB2C8EF36400E48AE1 /* Quote.swift */; };
+		E564CFBE2C8F017800E48AE1 /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = E564CFBD2C8F017800E48AE1 /* Key.plist */; };
+		E564CFC02C8F035200E48AE1 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFBF2C8F035200E48AE1 /* AppConfiguration.swift */; };
+		E564CFC22C8F048500E48AE1 /* QuoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFC12C8F048500E48AE1 /* QuoteRepository.swift */; };
+		E564CFC82C8FDCB500E48AE1 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFC52C8FDCB500E48AE1 /* ConnectionError.swift */; };
+		E564CFC92C8FDCB500E48AE1 /* DispatchQueueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFC62C8FDCB500E48AE1 /* DispatchQueueType.swift */; };
+		E564CFCA2C8FDCB500E48AE1 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFC72C8FDCB500E48AE1 /* Cancellable.swift */; };
+		E564CFCC2C8FDD5100E48AE1 /* QuoteRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFCB2C8FDD5100E48AE1 /* QuoteRepositoryImpl.swift */; };
+		E564CFD52C8FDF9600E48AE1 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFD12C8FDF9600E48AE1 /* DataTransferService.swift */; };
+		E564CFD62C8FDF9600E48AE1 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFD22C8FDF9600E48AE1 /* Endpoint.swift */; };
+		E564CFD72C8FDF9600E48AE1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFD32C8FDF9600E48AE1 /* NetworkService.swift */; };
+		E564CFD82C8FDF9600E48AE1 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFD42C8FDF9600E48AE1 /* NetworkConfig.swift */; };
+		E564CFDB2C8FF79600E48AE1 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFDA2C8FF79600E48AE1 /* RepositoryTask.swift */; };
+		E564CFDD2C8FF7E600E48AE1 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFDC2C8FF7E600E48AE1 /* APIEndpoints.swift */; };
+		E564CFE02C8FF83600E48AE1 /* QuoteRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFDF2C8FF83600E48AE1 /* QuoteRequestDTO+Mapping.swift */; };
+		E564CFE22C8FF84400E48AE1 /* QuoteResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFE12C8FF84400E48AE1 /* QuoteResponseDTO+Mapping.swift */; };
+		E564CFE42C8FFA7900E48AE1 /* QuoteQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFE32C8FFA7900E48AE1 /* QuoteQuery.swift */; };
+		E564CFE62C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFE52C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift */; };
+		E564CFE82C9007C200E48AE1 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFE72C9007C200E48AE1 /* AppDIContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +77,36 @@
 		E5224C642C8AB9CE00E205FD /* KquotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KquotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E5224C772C8AEE7100E205FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E5224C782C8AEE7100E205FD /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		E5224C7C2C8B101600E205FD /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		E5224C7D2C8B101600E205FD /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		E564CF982C8ED4D000E48AE1 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		E564CF9F2C8EDC3700E48AE1 /* HomeViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCoordinator.swift; sourceTree = "<group>"; };
+		E564CFA22C8EDDB900E48AE1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E564CFA42C8EDEB600E48AE1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		E564CFA62C8EE13200E48AE1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E564CFA82C8EE61F00E48AE1 /* SettingViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewCoordinator.swift; sourceTree = "<group>"; };
+		E564CFAA2C8EE67300E48AE1 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		E564CFAE2C8EE72D00E48AE1 /* UIViewControler+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControler+Extension.swift"; sourceTree = "<group>"; };
+		E564CFB62C8EF2DE00E48AE1 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		E564CFBB2C8EF36400E48AE1 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		E564CFBD2C8F017800E48AE1 /* Key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
+		E564CFBF2C8F035200E48AE1 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		E564CFC12C8F048500E48AE1 /* QuoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRepository.swift; sourceTree = "<group>"; };
+		E564CFC52C8FDCB500E48AE1 /* ConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
+		E564CFC62C8FDCB500E48AE1 /* DispatchQueueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueueType.swift; sourceTree = "<group>"; };
+		E564CFC72C8FDCB500E48AE1 /* Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		E564CFCB2C8FDD5100E48AE1 /* QuoteRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRepositoryImpl.swift; sourceTree = "<group>"; };
+		E564CFD12C8FDF9600E48AE1 /* DataTransferService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
+		E564CFD22C8FDF9600E48AE1 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E564CFD32C8FDF9600E48AE1 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E564CFD42C8FDF9600E48AE1 /* NetworkConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		E564CFDA2C8FF79600E48AE1 /* RepositoryTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
+		E564CFDC2C8FF7E600E48AE1 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		E564CFDF2C8FF83600E48AE1 /* QuoteRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuoteRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
+		E564CFE12C8FF84400E48AE1 /* QuoteResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuoteResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		E564CFE32C8FFA7900E48AE1 /* QuoteQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteQuery.swift; sourceTree = "<group>"; };
+		E564CFE52C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRandomQuoteUseCase.swift; sourceTree = "<group>"; };
+		E564CFE72C9007C200E48AE1 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +157,14 @@
 		E5224C402C8AB9CD00E205FD /* Kquotes */ = {
 			isa = PBXGroup;
 			children = (
+				E564CFA12C8EDD8C00E48AE1 /* Base */,
 				E5224C752C8AEDFB00E205FD /* Application */,
-				E5224C742C8AED5D00E205FD /* Resources */,
 				E5224C732C8AED5400E205FD /* Presentation */,
-				E5224C722C8AED4C00E205FD /* Domain */,
-				E5224C712C8AED4400E205FD /* Data */,
+				E564CFB02C8EF21200E48AE1 /* Domain */,
+				E564CFB12C8EF25F00E48AE1 /* Data */,
+				E564CFCD2C8FDF4400E48AE1 /* Infratructure */,
+				E564CFC42C8FDC3F00E48AE1 /* Common */,
+				E5224C742C8AED5D00E205FD /* Resources */,
 			);
 			path = Kquotes;
 			sourceTree = "<group>";
@@ -123,24 +186,12 @@
 			path = KquotesUITests;
 			sourceTree = "<group>";
 		};
-		E5224C712C8AED4400E205FD /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		E5224C722C8AED4C00E205FD /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
 		E5224C732C8AED5400E205FD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E5224C7B2C8B100300E205FD /* SettingPage */,
 				E5224C762C8AEE4500E205FD /* HomePage */,
+				E564CFC32C8FDB9C00E48AE1 /* Utils */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -151,6 +202,7 @@
 				E5224C4C2C8AB9CE00E205FD /* LaunchScreen.storyboard */,
 				E5224C4A2C8AB9CE00E205FD /* Assets.xcassets */,
 				E5224C4F2C8AB9CE00E205FD /* Info.plist */,
+				E564CFBD2C8F017800E48AE1 /* Key.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -159,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				E5224C412C8AB9CD00E205FD /* AppDelegate.swift */,
+				E564CFBF2C8F035200E48AE1 /* AppConfiguration.swift */,
+				E564CFE72C9007C200E48AE1 /* AppDIContainer.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -166,10 +220,190 @@
 		E5224C762C8AEE4500E205FD /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				E564CF9E2C8EDC2100E48AE1 /* Coordinator */,
 				E5224C772C8AEE7100E205FD /* HomeViewController.swift */,
 				E5224C782C8AEE7100E205FD /* HomeViewController.xib */,
+				E564CFA62C8EE13200E48AE1 /* HomeViewModel.swift */,
 			);
 			path = HomePage;
+			sourceTree = "<group>";
+		};
+		E5224C7B2C8B100300E205FD /* SettingPage */ = {
+			isa = PBXGroup;
+			children = (
+				E564CF9D2C8EDC1600E48AE1 /* Coordinator */,
+				E5224C7C2C8B101600E205FD /* SettingViewController.swift */,
+				E5224C7D2C8B101600E205FD /* SettingViewController.xib */,
+				E564CFAA2C8EE67300E48AE1 /* SettingViewModel.swift */,
+			);
+			path = SettingPage;
+			sourceTree = "<group>";
+		};
+		E564CF9D2C8EDC1600E48AE1 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFA82C8EE61F00E48AE1 /* SettingViewCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E564CF9E2C8EDC2100E48AE1 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E564CF9F2C8EDC3700E48AE1 /* HomeViewCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E564CFA12C8EDD8C00E48AE1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E564CF982C8ED4D000E48AE1 /* BaseCoordinator.swift */,
+				E564CFA22C8EDDB900E48AE1 /* BaseViewController.swift */,
+				E564CFA42C8EDEB600E48AE1 /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E564CFAC2C8EE6F700E48AE1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFAE2C8EE72D00E48AE1 /* UIViewControler+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E564CFB02C8EF21200E48AE1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFB52C8EF2CE00E48AE1 /* Repositories */,
+				E564CFB32C8EF28100E48AE1 /* UseCases */,
+				E564CFB22C8EF27400E48AE1 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E564CFB12C8EF25F00E48AE1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFBA2C8EF31F00E48AE1 /* Repositories */,
+				E564CFB92C8EF30D00E48AE1 /* LocalStorage */,
+				E564CFB82C8EF30500E48AE1 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E564CFB22C8EF27400E48AE1 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFBB2C8EF36400E48AE1 /* Quote.swift */,
+				E564CFE32C8FFA7900E48AE1 /* QuoteQuery.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		E564CFB32C8EF28100E48AE1 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFB42C8EF28900E48AE1 /* Protocol */,
+				E564CFE52C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		E564CFB42C8EF28900E48AE1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFB62C8EF2DE00E48AE1 /* UseCase.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E564CFB52C8EF2CE00E48AE1 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFC12C8F048500E48AE1 /* QuoteRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E564CFB82C8EF30500E48AE1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFDE2C8FF81A00E48AE1 /* DataMapping */,
+				E564CFDC2C8FF7E600E48AE1 /* APIEndpoints.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E564CFB92C8EF30D00E48AE1 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		E564CFBA2C8EF31F00E48AE1 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFD92C8FF78600E48AE1 /* Utils */,
+				E564CFCB2C8FDD5100E48AE1 /* QuoteRepositoryImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E564CFC32C8FDB9C00E48AE1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFAC2C8EE6F700E48AE1 /* Extension */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E564CFC42C8FDC3F00E48AE1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFC72C8FDCB500E48AE1 /* Cancellable.swift */,
+				E564CFC52C8FDCB500E48AE1 /* ConnectionError.swift */,
+				E564CFC62C8FDCB500E48AE1 /* DispatchQueueType.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E564CFCD2C8FDF4400E48AE1 /* Infratructure */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFD02C8FDF8800E48AE1 /* Network */,
+			);
+			path = Infratructure;
+			sourceTree = "<group>";
+		};
+		E564CFD02C8FDF8800E48AE1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFD12C8FDF9600E48AE1 /* DataTransferService.swift */,
+				E564CFD22C8FDF9600E48AE1 /* Endpoint.swift */,
+				E564CFD42C8FDF9600E48AE1 /* NetworkConfig.swift */,
+				E564CFD32C8FDF9600E48AE1 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E564CFD92C8FF78600E48AE1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFDA2C8FF79600E48AE1 /* RepositoryTask.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E564CFDE2C8FF81A00E48AE1 /* DataMapping */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFDF2C8FF83600E48AE1 /* QuoteRequestDTO+Mapping.swift */,
+				E564CFE12C8FF84400E48AE1 /* QuoteResponseDTO+Mapping.swift */,
+			);
+			path = DataMapping;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,8 +511,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5224C4E2C8AB9CE00E205FD /* LaunchScreen.storyboard in Resources */,
+				E564CFBE2C8F017800E48AE1 /* Key.plist in Resources */,
 				E5224C4B2C8AB9CE00E205FD /* Assets.xcassets in Resources */,
 				E5224C7A2C8AEE7100E205FD /* HomeViewController.xib in Resources */,
+				E5224C7F2C8B101600E205FD /* SettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,8 +539,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E564CFD72C8FDF9600E48AE1 /* NetworkService.swift in Sources */,
+				E564CFE22C8FF84400E48AE1 /* QuoteResponseDTO+Mapping.swift in Sources */,
+				E564CFE82C9007C200E48AE1 /* AppDIContainer.swift in Sources */,
+				E564CFCA2C8FDCB500E48AE1 /* Cancellable.swift in Sources */,
+				E564CFDB2C8FF79600E48AE1 /* RepositoryTask.swift in Sources */,
+				E564CFA02C8EDC3700E48AE1 /* HomeViewCoordinator.swift in Sources */,
+				E564CFB72C8EF2DE00E48AE1 /* UseCase.swift in Sources */,
+				E564CFD82C8FDF9600E48AE1 /* NetworkConfig.swift in Sources */,
+				E564CFC22C8F048500E48AE1 /* QuoteRepository.swift in Sources */,
+				E564CFD52C8FDF9600E48AE1 /* DataTransferService.swift in Sources */,
+				E564CFC92C8FDCB500E48AE1 /* DispatchQueueType.swift in Sources */,
+				E564CFE62C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift in Sources */,
 				E5224C422C8AB9CD00E205FD /* AppDelegate.swift in Sources */,
+				E564CFD62C8FDF9600E48AE1 /* Endpoint.swift in Sources */,
+				E564CFA72C8EE13200E48AE1 /* HomeViewModel.swift in Sources */,
 				E5224C792C8AEE7100E205FD /* HomeViewController.swift in Sources */,
+				E564CFE02C8FF83600E48AE1 /* QuoteRequestDTO+Mapping.swift in Sources */,
+				E564CFBC2C8EF36400E48AE1 /* Quote.swift in Sources */,
+				E564CFAF2C8EE72D00E48AE1 /* UIViewControler+Extension.swift in Sources */,
+				E564CFA52C8EDEB600E48AE1 /* BaseViewModel.swift in Sources */,
+				E564CFAB2C8EE67300E48AE1 /* SettingViewModel.swift in Sources */,
+				E564CFC82C8FDCB500E48AE1 /* ConnectionError.swift in Sources */,
+				E5224C7E2C8B101600E205FD /* SettingViewController.swift in Sources */,
+				E564CFDD2C8FF7E600E48AE1 /* APIEndpoints.swift in Sources */,
+				E564CF992C8ED4D000E48AE1 /* BaseCoordinator.swift in Sources */,
+				E564CFE42C8FFA7900E48AE1 /* QuoteQuery.swift in Sources */,
+				E564CFA92C8EE61F00E48AE1 /* SettingViewCoordinator.swift in Sources */,
+				E564CFCC2C8FDD5100E48AE1 /* QuoteRepositoryImpl.swift in Sources */,
+				E564CFC02C8F035200E48AE1 /* AppConfiguration.swift in Sources */,
+				E564CFA32C8EDDB900E48AE1 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
