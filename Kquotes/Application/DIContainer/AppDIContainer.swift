@@ -23,4 +23,8 @@ final class AppDIContainer {
         let apiDataNetwork = DefaultNetworkService(config: config)
         return DefaultDataTransferService(with: apiDataNetwork)
     }()
+    
+   func favoriteQuotesStorage() -> FavoriteQuotesStorage {
+        return FavoriteQuotesStorageImpl()
+    }
 }

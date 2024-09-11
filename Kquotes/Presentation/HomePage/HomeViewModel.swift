@@ -9,7 +9,9 @@ import Foundation
 
 class HomeViewModel: BaseViewModel {
     
-    let fetchQuoteUseCase: FetchRandomQuoteUseCase
+    private let fetchQuoteUseCase: FetchRandomQuoteUseCase
+    private let fetchFavoriteUseCase: FetchFavoriteQuotesUseCase
+    private let saveQuoteUseCase: SaveQuoteUseCase
     
     // A property to store the fetched quote
     var randomQuote: Quote? {
@@ -26,8 +28,12 @@ class HomeViewModel: BaseViewModel {
     private var quoteLoadTask: Cancellable? { willSet { quoteLoadTask?.cancel() } }
     
     init(fetchQuoteUseCase: FetchRandomQuoteUseCase,
+         fetchFavoriteUseCase: FetchFavoriteQuotesUseCase,
+         saveQuoteUseCase: SaveQuoteUseCase,
          mainQueue: DispatchQueueType = DispatchQueue.main) {
         self.fetchQuoteUseCase = fetchQuoteUseCase
+        self.fetchFavoriteUseCase = fetchFavoriteUseCase
+        self.saveQuoteUseCase = saveQuoteUseCase
         self.mainQueue = mainQueue
     }
     
@@ -47,5 +53,23 @@ class HomeViewModel: BaseViewModel {
     
     func cancelCurrentTask() {
         quoteLoadTask?.cancel()
+    }
+    
+    func saveQuote(quote: Quote, completion: @escaping () -> Void) {
+        saveQuoteUseCase.execute(quote: quote, completion: completion)
+    }
+    
+    func fetchAllFavorite() {
+        fetchFavoriteUseCase.execute(completion: { [weak self] result in
+            self?.mainQueue.async {
+                switch result {
+                case .success(let quotes):
+                    var favoriteQuotes = quotes
+                    //                    self?.randomQuote = quotes.first
+                case .failure(let error):
+                    print("Error fetching quote: \(error)")
+                }
+            }
+        })
     }
 }
