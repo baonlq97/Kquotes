@@ -10,21 +10,30 @@ import Foundation
 final class QuoteRepositoryImpl {
 
     private let dataTransferService: DataTransferService
-//    private let cache: MoviesResponseStorage
+    private let localStorage: FavoriteQuotesStorage
     private let backgroundQueue: DataTransferDispatchQueue
 
     init(
         dataTransferService: DataTransferService,
-//        cache: MoviesResponseStorage,
+        localStorage: FavoriteQuotesStorage,
         backgroundQueue: DataTransferDispatchQueue = DispatchQueue.global(qos: .userInitiated)
     ) {
         self.dataTransferService = dataTransferService
-//        self.cache = cache
+        self.localStorage = localStorage
         self.backgroundQueue = backgroundQueue
     }
 }
 
 extension QuoteRepositoryImpl: QuoteRepository {
+    func fetchFavoriteQuotes(completion: @escaping (Result<[Quote]?, Error>) -> Void) {
+        return localStorage.fetchFavorites(completion: completion)
+    }
+    
+    func save(quote: Quote, completion: @escaping () -> Void) {
+        localStorage.save(quote: quote,
+                          completion: completion)
+    }
+    
     func fetchRandomQuote(query: QuoteQuery,
 //                          cached: @escaping ([Quote]) -> Void,
                           completion: @escaping (Result<[Quote], Error>) -> Void) -> Cancellable? {

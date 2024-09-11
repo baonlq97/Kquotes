@@ -45,6 +45,14 @@
 		E564CFE42C8FFA7900E48AE1 /* QuoteQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFE32C8FFA7900E48AE1 /* QuoteQuery.swift */; };
 		E564CFE62C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFE52C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift */; };
 		E564CFE82C9007C200E48AE1 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFE72C9007C200E48AE1 /* AppDIContainer.swift */; };
+		E564CFEB2C917F8800E48AE1 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFEA2C917F8800E48AE1 /* CoreDataStorage.swift */; };
+		E564CFEE2C917FC700E48AE1 /* CoreDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E564CFEC2C917FC700E48AE1 /* CoreDataStorage.xcdatamodeld */; };
+		E564CFF22C9180F600E48AE1 /* FavoriteQuotesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFF12C9180F600E48AE1 /* FavoriteQuotesStorage.swift */; };
+		E564CFF42C9181AF00E48AE1 /* FavoriteQuotesStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFF32C9181AF00E48AE1 /* FavoriteQuotesStorageImpl.swift */; };
+		E564CFF72C9183A100E48AE1 /* QuoteEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFF62C9183A100E48AE1 /* QuoteEntity+Mapping.swift */; };
+		E564CFF92C91963A00E48AE1 /* SaveQuoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFF82C91963A00E48AE1 /* SaveQuoteUseCase.swift */; };
+		E564CFFC2C9198AB00E48AE1 /* HomeViewDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFFB2C9198AB00E48AE1 /* HomeViewDIContainer.swift */; };
+		E564CFFE2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFFD2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +115,14 @@
 		E564CFE32C8FFA7900E48AE1 /* QuoteQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteQuery.swift; sourceTree = "<group>"; };
 		E564CFE52C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRandomQuoteUseCase.swift; sourceTree = "<group>"; };
 		E564CFE72C9007C200E48AE1 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		E564CFEA2C917F8800E48AE1 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		E564CFED2C917FC700E48AE1 /* CoreDataStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStorage.xcdatamodel; sourceTree = "<group>"; };
+		E564CFF12C9180F600E48AE1 /* FavoriteQuotesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteQuotesStorage.swift; sourceTree = "<group>"; };
+		E564CFF32C9181AF00E48AE1 /* FavoriteQuotesStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteQuotesStorageImpl.swift; sourceTree = "<group>"; };
+		E564CFF62C9183A100E48AE1 /* QuoteEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuoteEntity+Mapping.swift"; sourceTree = "<group>"; };
+		E564CFF82C91963A00E48AE1 /* SaveQuoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveQuoteUseCase.swift; sourceTree = "<group>"; };
+		E564CFFB2C9198AB00E48AE1 /* HomeViewDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDIContainer.swift; sourceTree = "<group>"; };
+		E564CFFD2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFavoriteQuotesUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,9 +226,9 @@
 		E5224C752C8AEDFB00E205FD /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				E564CFFA2C91989500E48AE1 /* DIContainer */,
 				E5224C412C8AB9CD00E205FD /* AppDelegate.swift */,
 				E564CFBF2C8F035200E48AE1 /* AppConfiguration.swift */,
-				E564CFE72C9007C200E48AE1 /* AppDIContainer.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -287,7 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				E564CFBA2C8EF31F00E48AE1 /* Repositories */,
-				E564CFB92C8EF30D00E48AE1 /* LocalStorage */,
+				E564CFE92C917F7300E48AE1 /* LocalStorage */,
 				E564CFB82C8EF30500E48AE1 /* Network */,
 			);
 			path = Data;
@@ -307,6 +323,8 @@
 			children = (
 				E564CFB42C8EF28900E48AE1 /* Protocol */,
 				E564CFE52C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift */,
+				E564CFF82C91963A00E48AE1 /* SaveQuoteUseCase.swift */,
+				E564CFFD2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -334,13 +352,6 @@
 				E564CFDC2C8FF7E600E48AE1 /* APIEndpoints.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		E564CFB92C8EF30D00E48AE1 /* LocalStorage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LocalStorage;
 			sourceTree = "<group>";
 		};
 		E564CFBA2C8EF31F00E48AE1 /* Repositories */ = {
@@ -404,6 +415,51 @@
 				E564CFE12C8FF84400E48AE1 /* QuoteResponseDTO+Mapping.swift */,
 			);
 			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		E564CFE92C917F7300E48AE1 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFF02C9180A300E48AE1 /* FavoriteQuotesStorage */,
+				E564CFEF2C91807300E48AE1 /* CoreDataStorage */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		E564CFEF2C91807300E48AE1 /* CoreDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFEA2C917F8800E48AE1 /* CoreDataStorage.swift */,
+				E564CFEC2C917FC700E48AE1 /* CoreDataStorage.xcdatamodeld */,
+			);
+			path = CoreDataStorage;
+			sourceTree = "<group>";
+		};
+		E564CFF02C9180A300E48AE1 /* FavoriteQuotesStorage */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFF12C9180F600E48AE1 /* FavoriteQuotesStorage.swift */,
+				E564CFF32C9181AF00E48AE1 /* FavoriteQuotesStorageImpl.swift */,
+				E564CFF52C91837A00E48AE1 /* EntityMapping */,
+			);
+			path = FavoriteQuotesStorage;
+			sourceTree = "<group>";
+		};
+		E564CFF52C91837A00E48AE1 /* EntityMapping */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFF62C9183A100E48AE1 /* QuoteEntity+Mapping.swift */,
+			);
+			path = EntityMapping;
+			sourceTree = "<group>";
+		};
+		E564CFFA2C91989500E48AE1 /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFE72C9007C200E48AE1 /* AppDIContainer.swift */,
+				E564CFFB2C9198AB00E48AE1 /* HomeViewDIContainer.swift */,
+			);
+			path = DIContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,33 +595,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E564CFF22C9180F600E48AE1 /* FavoriteQuotesStorage.swift in Sources */,
 				E564CFD72C8FDF9600E48AE1 /* NetworkService.swift in Sources */,
 				E564CFE22C8FF84400E48AE1 /* QuoteResponseDTO+Mapping.swift in Sources */,
 				E564CFE82C9007C200E48AE1 /* AppDIContainer.swift in Sources */,
 				E564CFCA2C8FDCB500E48AE1 /* Cancellable.swift in Sources */,
 				E564CFDB2C8FF79600E48AE1 /* RepositoryTask.swift in Sources */,
 				E564CFA02C8EDC3700E48AE1 /* HomeViewCoordinator.swift in Sources */,
+				E564CFEB2C917F8800E48AE1 /* CoreDataStorage.swift in Sources */,
 				E564CFB72C8EF2DE00E48AE1 /* UseCase.swift in Sources */,
 				E564CFD82C8FDF9600E48AE1 /* NetworkConfig.swift in Sources */,
 				E564CFC22C8F048500E48AE1 /* QuoteRepository.swift in Sources */,
 				E564CFD52C8FDF9600E48AE1 /* DataTransferService.swift in Sources */,
 				E564CFC92C8FDCB500E48AE1 /* DispatchQueueType.swift in Sources */,
+				E564CFFE2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift in Sources */,
+				E564CFEE2C917FC700E48AE1 /* CoreDataStorage.xcdatamodeld in Sources */,
 				E564CFE62C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift in Sources */,
 				E5224C422C8AB9CD00E205FD /* AppDelegate.swift in Sources */,
 				E564CFD62C8FDF9600E48AE1 /* Endpoint.swift in Sources */,
 				E564CFA72C8EE13200E48AE1 /* HomeViewModel.swift in Sources */,
 				E5224C792C8AEE7100E205FD /* HomeViewController.swift in Sources */,
 				E564CFE02C8FF83600E48AE1 /* QuoteRequestDTO+Mapping.swift in Sources */,
+				E564CFF42C9181AF00E48AE1 /* FavoriteQuotesStorageImpl.swift in Sources */,
 				E564CFBC2C8EF36400E48AE1 /* Quote.swift in Sources */,
 				E564CFAF2C8EE72D00E48AE1 /* UIViewControler+Extension.swift in Sources */,
 				E564CFA52C8EDEB600E48AE1 /* BaseViewModel.swift in Sources */,
 				E564CFAB2C8EE67300E48AE1 /* SettingViewModel.swift in Sources */,
 				E564CFC82C8FDCB500E48AE1 /* ConnectionError.swift in Sources */,
 				E5224C7E2C8B101600E205FD /* SettingViewController.swift in Sources */,
+				E564CFF92C91963A00E48AE1 /* SaveQuoteUseCase.swift in Sources */,
 				E564CFDD2C8FF7E600E48AE1 /* APIEndpoints.swift in Sources */,
 				E564CF992C8ED4D000E48AE1 /* BaseCoordinator.swift in Sources */,
 				E564CFE42C8FFA7900E48AE1 /* QuoteQuery.swift in Sources */,
+				E564CFFC2C9198AB00E48AE1 /* HomeViewDIContainer.swift in Sources */,
 				E564CFA92C8EE61F00E48AE1 /* SettingViewCoordinator.swift in Sources */,
+				E564CFF72C9183A100E48AE1 /* QuoteEntity+Mapping.swift in Sources */,
 				E564CFCC2C8FDD5100E48AE1 /* QuoteRepositoryImpl.swift in Sources */,
 				E564CFC02C8F035200E48AE1 /* AppConfiguration.swift in Sources */,
 				E564CFA32C8EDDB900E48AE1 /* BaseViewController.swift in Sources */,
@@ -905,6 +969,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E564CFEC2C917FC700E48AE1 /* CoreDataStorage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E564CFED2C917FC700E48AE1 /* CoreDataStorage.xcdatamodel */,
+			);
+			currentVersion = E564CFED2C917FC700E48AE1 /* CoreDataStorage.xcdatamodel */;
+			path = CoreDataStorage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E5224C362C8AB9CD00E205FD /* Project object */;
 }

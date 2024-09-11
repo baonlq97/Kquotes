@@ -11,11 +11,11 @@ class HomeViewCoordinator : BaseCoordinator {
     
     static let shared = HomeViewCoordinator()
     
-    func start(data: Any?, quoteUseCase: FetchRandomQuoteUseCase) {
+    func start(data: Any?) {
         guard let window = data as? UIWindow else { return }
         
         let vc = HomeViewController()
-        vc.viewModel = HomeViewModel(fetchQuoteUseCase: quoteUseCase)
+        vc.viewModel = HomeViewDIContainer().makeHomeViewModel()
         
         let nav = UINavigationController(rootViewController: vc)
         

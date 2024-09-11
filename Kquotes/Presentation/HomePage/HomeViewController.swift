@@ -12,6 +12,11 @@ class HomeViewController: BaseViewController {
     @IBOutlet private weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var loadMoreLabel: UILabel!
+    @IBOutlet weak var favoriteImage: UIImageView!
+    
+    private var homeViewModel: HomeViewModel? {
+        return viewModel as? HomeViewModel
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +28,14 @@ class HomeViewController: BaseViewController {
         menuButton.isUserInteractionEnabled = true
         
         loadMoreLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.loadMoreTouched(_:))))
-        
         loadMoreLabel.isUserInteractionEnabled = true
         
+        favoriteImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.favoriteImageTouched(_:))))
+        favoriteImage.isUserInteractionEnabled = true
+        
         // Fetch the random quote
-        guard let viewModel = viewModel as? HomeViewModel else { return }
-        viewModel.fetchRandomQuote()
+        homeViewModel?.fetchRandomQuote()
+        homeViewModel?.fetchAllFavorite()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,10 +52,9 @@ class HomeViewController: BaseViewController {
     
     override func bindViewModel() {
         super.bindViewModel()
-        guard let viewModel = viewModel as? HomeViewModel else { return }
         
-        viewModel.quoteUpdated = { [weak self] in
-            guard let self = self, let quote = viewModel.randomQuote else { return }
+        homeViewModel?.quoteUpdated = { [weak self] in
+            guard let self = self, let quote = homeViewModel?.randomQuote else { return }
             self.quoteLabel.text = quote.quote
             self.authorLabel.text = quote.author
         }
@@ -56,14 +62,25 @@ class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController {
-    @objc private func menuButtonTouched(_ gestureRecognizer: UITapGestureRecognizer) {
+    @objc 
+    private func menuButtonTouched(_ gestureRecognizer: UITapGestureRecognizer) {
         SettingViewCoordinator.shared.start()
         
     }
     
-    @objc private func loadMoreTouched(_ gestureRecognizer: UITapGestureRecognizer) {
-        guard let viewModel = viewModel as? HomeViewModel else { return }
-        viewModel.cancelCurrentTask()
-        viewModel.fetchRandomQuote()
+    @objc 
+    private func loadMoreTouched(_ gestureRecognizer: UITapGestureRecognizer) {
+        homeViewModel?.cancelCurrentTask()
+        homeViewModel?.fetchRandomQuote()
+    }
+    
+    @objc
+    private func favoriteImageTouched(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard let quote = homeViewModel?.randomQuote else { return }
+        homeViewModel?.saveQuote(quote: quote, completion: {
+            DispatchQueue.main.async {
+                self.favoriteImage.image = .bookmarkFilled
+            }
+        })
     }
 }

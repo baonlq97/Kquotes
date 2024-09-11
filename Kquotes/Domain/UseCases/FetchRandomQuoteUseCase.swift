@@ -10,7 +10,6 @@ import Foundation
 protocol FetchRandomQuoteUseCase {
     func execute(
         requestValue: FetchRandomQuoteRequestValue,
-//        cached: @escaping (MoviesPage) -> Void,
         completion: @escaping (Result<[Quote], Error>) -> Void
     ) -> Cancellable?
 }
@@ -28,20 +27,11 @@ class FetchRandomQuoteUseCaseImpl: FetchRandomQuoteUseCase {
         
         return quoteRepository.fetchRandomQuote(
             query: requestValue.query,
-//            page: requestValue.page,
-//            cached: cached,
             completion: { result in
-
-//            if case .success = result {
-//                self.moviesQueriesRepository.saveRecentQuery(query: requestValue.query) { _ in }
-//            }
-
-            completion(result)
-        })
+                completion(result)
+            }
+        )
     }
-    
-    
-    
 }
 
 struct FetchRandomQuoteRequestValue {

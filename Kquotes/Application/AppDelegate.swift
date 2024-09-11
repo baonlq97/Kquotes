@@ -16,14 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.appDIContainer = AppDIContainer()
         
         guard let window = window else { return true }
-        guard let transferService = appDIContainer?.apiDataTransferService else { return true }
         
-        let repository = QuoteRepositoryImpl(dataTransferService: transferService)
-        let useCase = FetchRandomQuoteUseCaseImpl(quoteRepository: repository)
-        HomeViewCoordinator.shared.start(data: window, quoteUseCase: useCase)
+        HomeViewCoordinator.shared.start(data: window)
         
         return true
     }
