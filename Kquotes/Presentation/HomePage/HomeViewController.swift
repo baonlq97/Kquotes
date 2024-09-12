@@ -57,6 +57,15 @@ class HomeViewController: BaseViewController {
             guard let self = self, let quote = homeViewModel?.randomQuote else { return }
             self.quoteLabel.text = quote.quote
             self.authorLabel.text = quote.author
+            self.favoriteImage.image = .bookmark
+            
+            if let quotes = self.homeViewModel?.favoriteQuotes {
+                if (quotes.contains(where: {$0.quote == quote.quote})) {
+                    DispatchQueue.main.async {
+                        self.favoriteImage.image = .bookmarkFilled
+                    }
+                }
+            }
         }
     }
 }
@@ -72,6 +81,8 @@ extension HomeViewController {
     private func loadMoreTouched(_ gestureRecognizer: UITapGestureRecognizer) {
         homeViewModel?.cancelCurrentTask()
         homeViewModel?.fetchRandomQuote()
+        homeViewModel?.fetchAllFavorite()
+
     }
     
     @objc

@@ -20,9 +20,11 @@ class HomeViewModel: BaseViewModel {
             self.quoteUpdated?()
         }
     }
-    
     // A closure that will be used to notify the view when the quote is updated
     var quoteUpdated: (() -> Void)?
+    
+    var favoriteQuotes: [Quote]?
+    
     
     private let mainQueue: DispatchQueueType
     private var quoteLoadTask: Cancellable? { willSet { quoteLoadTask?.cancel() } }
@@ -64,8 +66,7 @@ class HomeViewModel: BaseViewModel {
             self?.mainQueue.async {
                 switch result {
                 case .success(let quotes):
-                    var favoriteQuotes = quotes
-                    //                    self?.randomQuote = quotes.first
+                    self?.favoriteQuotes = quotes
                 case .failure(let error):
                     print("Error fetching quote: \(error)")
                 }
