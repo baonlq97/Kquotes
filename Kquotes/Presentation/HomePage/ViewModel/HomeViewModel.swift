@@ -21,7 +21,12 @@ class HomeViewModel: BaseViewModel {
     }
     var quoteUpdated: (() -> Void)?
     
-    var favoriteQuotes: [Quote]?
+    var favoriteQuotes: [Quote]? {
+        didSet {
+            self.favoriteQuotesUpdated?()
+        }
+    }
+    var favoriteQuotesUpdated: (() -> Void)?
     
     
     private let mainQueue: DispatchQueueType

@@ -13,6 +13,10 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var loadMoreLabel: UILabel!
     @IBOutlet weak var favoriteImage: UIImageView!
+    @IBOutlet weak var favoriteTableView: UITableView!
+    @IBOutlet weak var homeBookmarkToggleImage: UIImageView!
+    
+    private var isShowHome: Bool = true
     
     private var homeViewModel: HomeViewModel? {
         return viewModel as? HomeViewModel
@@ -20,6 +24,10 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupTableView()
+        favoriteTableView.delegate = self
+        favoriteTableView.dataSource = self
         
         quoteLabel.text = "..."
         authorLabel.text = "-"
@@ -32,6 +40,9 @@ class HomeViewController: BaseViewController {
         
         favoriteImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.favoriteImageTouched(_:))))
         favoriteImage.isUserInteractionEnabled = true
+        
+        homeBookmarkToggleImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.homeBookmarkToggleImageTouched(_:))))
+        homeBookmarkToggleImage.isUserInteractionEnabled = true
         
         // Fetch the random quote
         homeViewModel?.fetchRandomQuote()
@@ -67,11 +78,30 @@ class HomeViewController: BaseViewController {
                 }
             }
         }
+        
+        homeViewModel?.favoriteQuotesUpdated = { [weak self] in
+            DispatchQueue.main.async {
+                self?.favoriteTableView.reloadData()
+            }
+        }
     }
 }
 
 extension HomeViewController {
-    @objc 
+    
+    @objc
+    private func homeBookmarkToggleImageTouched(_ gestureRecognizer: UITapGestureRecognizer) {
+        if (self.favoriteTableView.isHidden) {
+            self.homeBookmarkToggleImage.image = UIImage(systemName: "house")
+            self.favoriteTableView.isHidden = false
+        }
+        else {
+            self.homeBookmarkToggleImage.image = UIImage(systemName: "bookmark.square")
+            self.favoriteTableView.isHidden = true
+        }
+    }
+    
+    @objc
     private func menuButtonTouched(_ gestureRecognizer: UITapGestureRecognizer) {
         SettingViewCoordinator.shared.start()
         
@@ -101,4 +131,53 @@ extension HomeViewController {
             })
         }
     }
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    private func setupTableView() {
+        favoriteTableView.register(UINib(nibName: "FavoriteItemCell", bundle: nil), forCellReuseIdentifier: FavoriteItemCell.reuseIdentifier)
+        favoriteTableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var count = 0
+        if let quotes = self.homeViewModel?.favoriteQuotes {
+            count = quotes.count
+        }
+        return count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: FavoriteItemCell.reuseIdentifier,
+            for: indexPath) as? FavoriteItemCell else {
+            assertionFailure("Cannot dequeue reusable cell \(FavoriteItemCell.self) with reuseIdentifier: \(FavoriteItemCell.reuseIdentifier)")
+            return UITableViewCell()
+        }
+        
+        if let quotes = self.homeViewModel?.favoriteQuotes {
+            cell.bind(quote: quotes[indexPath.row])
+            cell.privateButtonTouched = { [weak self] quote in
+                self?.homeViewModel?.deleteFavoriteQuote(quote: quote, completion: {
+                    DispatchQueue.main.async {
+                        // Check if current quote is the same as deleted quote
+                        if (self?.homeViewModel?.randomQuote?.quote == quote.quote) {
+                            // Reset the bookmart image to unsave
+                            self?.favoriteImage.image = .bookmark
+                        }
+                        tableView.reloadData()
+                    }
+                })
+            }
+        }
+        
+        return cell
+    }
+    
+    
 }
