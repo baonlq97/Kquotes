@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol SaveQuoteUseCase {
+protocol SaveFavoriteQuoteUseCase {
     func execute(
         quote: Quote,
         completion: @escaping () -> Void
     )
 }
 
-class SaveQuoteUseCaseImpl: SaveQuoteUseCase {
+class SaveFavoriteQuoteUseCaseImpl: SaveFavoriteQuoteUseCase {
     private let quoteRepository: QuoteRepository
     
     init(quoteRepository: QuoteRepository) {

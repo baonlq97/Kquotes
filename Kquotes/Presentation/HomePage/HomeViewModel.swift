@@ -10,17 +10,15 @@ import Foundation
 class HomeViewModel: BaseViewModel {
     
     private let fetchQuoteUseCase: FetchRandomQuoteUseCase
-    private let fetchFavoriteUseCase: FetchFavoriteQuotesUseCase
-    private let saveQuoteUseCase: SaveQuoteUseCase
+    private let fetchFavoriteQuotesUseCase: FetchFavoriteQuotesUseCase
+    private let saveFavoriteQuoteUseCase: SaveFavoriteQuoteUseCase
+    private let deleteFavoriteQuoteUseCase: DeleteFavoriteQuoteUseCase
     
-    // A property to store the fetched quote
     var randomQuote: Quote? {
         didSet {
-            // Notify when the quote is set
             self.quoteUpdated?()
         }
     }
-    // A closure that will be used to notify the view when the quote is updated
     var quoteUpdated: (() -> Void)?
     
     var favoriteQuotes: [Quote]?
@@ -30,12 +28,14 @@ class HomeViewModel: BaseViewModel {
     private var quoteLoadTask: Cancellable? { willSet { quoteLoadTask?.cancel() } }
     
     init(fetchQuoteUseCase: FetchRandomQuoteUseCase,
-         fetchFavoriteUseCase: FetchFavoriteQuotesUseCase,
-         saveQuoteUseCase: SaveQuoteUseCase,
+         fetchFavoriteQuotesUseCase: FetchFavoriteQuotesUseCase,
+         saveFavoriteQuoteUseCase: SaveFavoriteQuoteUseCase,
+         deleteFavoriteQuoteUseCase: DeleteFavoriteQuoteUseCase,
          mainQueue: DispatchQueueType = DispatchQueue.main) {
         self.fetchQuoteUseCase = fetchQuoteUseCase
-        self.fetchFavoriteUseCase = fetchFavoriteUseCase
-        self.saveQuoteUseCase = saveQuoteUseCase
+        self.fetchFavoriteQuotesUseCase = fetchFavoriteQuotesUseCase
+        self.saveFavoriteQuoteUseCase = saveFavoriteQuoteUseCase
+        self.deleteFavoriteQuoteUseCase = deleteFavoriteQuoteUseCase
         self.mainQueue = mainQueue
     }
     
@@ -57,12 +57,12 @@ class HomeViewModel: BaseViewModel {
         quoteLoadTask?.cancel()
     }
     
-    func saveQuote(quote: Quote, completion: @escaping () -> Void) {
-        saveQuoteUseCase.execute(quote: quote, completion: completion)
+    func saveFavoriteQuote(quote: Quote, completion: @escaping () -> Void) {
+        saveFavoriteQuoteUseCase.execute(quote: quote, completion: completion)
     }
     
-    func fetchAllFavorite() {
-        fetchFavoriteUseCase.execute(completion: { [weak self] result in
+    func fetchFavoriteQuotes() {
+        fetchFavoriteQuotesUseCase.execute(completion: { [weak self] result in
             self?.mainQueue.async {
                 switch result {
                 case .success(let quotes):
@@ -71,6 +71,13 @@ class HomeViewModel: BaseViewModel {
                     print("Error fetching quote: \(error)")
                 }
             }
+        })
+    }
+    
+    func deleteFavoriteQuote(quote: Quote, completion: @escaping () -> Void) {
+        deleteFavoriteQuoteUseCase.execute(quote: quote, completion: {
+            self.favoriteQuotes?.removeAll(where: {$0 == quote})
+            completion()
         })
     }
 }

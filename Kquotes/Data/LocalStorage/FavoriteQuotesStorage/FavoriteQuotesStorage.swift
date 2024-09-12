@@ -10,4 +10,5 @@ import Foundation
 protocol FavoriteQuotesStorage {
     func fetchFavorites(completion: @escaping (Result<[Quote]?, Error>) -> Void)
     func save(quote: Quote, completion: @escaping () -> Void)
+    func delete(quote: Quote, completion: @escaping () -> Void)
 }

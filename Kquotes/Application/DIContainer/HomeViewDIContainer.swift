@@ -18,12 +18,14 @@ final class HomeViewDIContainer {
                                              localStorage: favoriteStorage)
         let fetchRandomQuoteUseCase = FetchRandomQuoteUseCaseImpl(quoteRepository: repository)
         let fetchFavoriteQuotesUseCase = FetchFavoriteQuotesUseCaseImpl(quoteRepository: repository)
-        let saveQuoteUseCase = SaveQuoteUseCaseImpl(quoteRepository: repository)
+        let saveFavoriteQuoteUseCase = SaveFavoriteQuoteUseCaseImpl(quoteRepository: repository)
+        let deleteFavoriteQuoteUseCase = DeleteFavoriteQuoteUseCaseImpl(quoteRepository: repository)
         
         return HomeViewModel(
             fetchQuoteUseCase: fetchRandomQuoteUseCase,
-            fetchFavoriteUseCase: fetchFavoriteQuotesUseCase,
-            saveQuoteUseCase: saveQuoteUseCase
+            fetchFavoriteQuotesUseCase: fetchFavoriteQuotesUseCase,
+            saveFavoriteQuoteUseCase: saveFavoriteQuoteUseCase,
+            deleteFavoriteQuoteUseCase: deleteFavoriteQuoteUseCase
         )
     }
 }

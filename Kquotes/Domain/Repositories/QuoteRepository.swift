@@ -18,4 +18,6 @@ protocol QuoteRepository {
     func fetchFavoriteQuotes(completion: @escaping (Result<[Quote]?, Error>) -> Void)
     
     func save(quote: Quote, completion: @escaping () -> Void)
+    
+    func delete(quote: Quote, completion: @escaping () -> Void)
 }
