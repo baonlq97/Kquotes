@@ -81,10 +81,6 @@ extension HomeViewController {
     private func loadMoreTouched(_ gestureRecognizer: UITapGestureRecognizer) {
         homeViewModel?.cancelCurrentTask()
         homeViewModel?.fetchRandomQuote()
-        // TODO: Need to remove for performance improvement.
-        // TODO: Save new item to memory when press save instead of fetch DB every time
-        homeViewModel?.fetchFavoriteQuotes()
-
     }
     
     @objc
