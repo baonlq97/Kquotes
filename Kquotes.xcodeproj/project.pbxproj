@@ -50,9 +50,10 @@
 		E564CFF22C9180F600E48AE1 /* FavoriteQuotesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFF12C9180F600E48AE1 /* FavoriteQuotesStorage.swift */; };
 		E564CFF42C9181AF00E48AE1 /* FavoriteQuotesStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFF32C9181AF00E48AE1 /* FavoriteQuotesStorageImpl.swift */; };
 		E564CFF72C9183A100E48AE1 /* QuoteEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFF62C9183A100E48AE1 /* QuoteEntity+Mapping.swift */; };
-		E564CFF92C91963A00E48AE1 /* SaveQuoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFF82C91963A00E48AE1 /* SaveQuoteUseCase.swift */; };
+		E564CFF92C91963A00E48AE1 /* SaveFavoriteQuoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFF82C91963A00E48AE1 /* SaveFavoriteQuoteUseCase.swift */; };
 		E564CFFC2C9198AB00E48AE1 /* HomeViewDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFFB2C9198AB00E48AE1 /* HomeViewDIContainer.swift */; };
 		E564CFFE2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFFD2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift */; };
+		E564D0002C9289FB00E48AE1 /* DeleteFavoriteQuoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFFF2C9289FB00E48AE1 /* DeleteFavoriteQuoteUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,9 +121,10 @@
 		E564CFF12C9180F600E48AE1 /* FavoriteQuotesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteQuotesStorage.swift; sourceTree = "<group>"; };
 		E564CFF32C9181AF00E48AE1 /* FavoriteQuotesStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteQuotesStorageImpl.swift; sourceTree = "<group>"; };
 		E564CFF62C9183A100E48AE1 /* QuoteEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuoteEntity+Mapping.swift"; sourceTree = "<group>"; };
-		E564CFF82C91963A00E48AE1 /* SaveQuoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveQuoteUseCase.swift; sourceTree = "<group>"; };
+		E564CFF82C91963A00E48AE1 /* SaveFavoriteQuoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFavoriteQuoteUseCase.swift; sourceTree = "<group>"; };
 		E564CFFB2C9198AB00E48AE1 /* HomeViewDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDIContainer.swift; sourceTree = "<group>"; };
 		E564CFFD2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFavoriteQuotesUseCase.swift; sourceTree = "<group>"; };
+		E564CFFF2C9289FB00E48AE1 /* DeleteFavoriteQuoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFavoriteQuoteUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,8 +325,9 @@
 			children = (
 				E564CFB42C8EF28900E48AE1 /* Protocol */,
 				E564CFE52C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift */,
-				E564CFF82C91963A00E48AE1 /* SaveQuoteUseCase.swift */,
+				E564CFF82C91963A00E48AE1 /* SaveFavoriteQuoteUseCase.swift */,
 				E564CFFD2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift */,
+				E564CFFF2C9289FB00E48AE1 /* DeleteFavoriteQuoteUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -623,8 +626,9 @@
 				E564CFAB2C8EE67300E48AE1 /* SettingViewModel.swift in Sources */,
 				E564CFC82C8FDCB500E48AE1 /* ConnectionError.swift in Sources */,
 				E5224C7E2C8B101600E205FD /* SettingViewController.swift in Sources */,
-				E564CFF92C91963A00E48AE1 /* SaveQuoteUseCase.swift in Sources */,
+				E564CFF92C91963A00E48AE1 /* SaveFavoriteQuoteUseCase.swift in Sources */,
 				E564CFDD2C8FF7E600E48AE1 /* APIEndpoints.swift in Sources */,
+				E564D0002C9289FB00E48AE1 /* DeleteFavoriteQuoteUseCase.swift in Sources */,
 				E564CF992C8ED4D000E48AE1 /* BaseCoordinator.swift in Sources */,
 				E564CFE42C8FFA7900E48AE1 /* QuoteQuery.swift in Sources */,
 				E564CFFC2C9198AB00E48AE1 /* HomeViewDIContainer.swift in Sources */,

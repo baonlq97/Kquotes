@@ -35,7 +35,7 @@ class HomeViewController: BaseViewController {
         
         // Fetch the random quote
         homeViewModel?.fetchRandomQuote()
-        homeViewModel?.fetchAllFavorite()
+        homeViewModel?.fetchFavoriteQuotes()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,17 +81,24 @@ extension HomeViewController {
     private func loadMoreTouched(_ gestureRecognizer: UITapGestureRecognizer) {
         homeViewModel?.cancelCurrentTask()
         homeViewModel?.fetchRandomQuote()
-        homeViewModel?.fetchAllFavorite()
-
     }
     
     @objc
     private func favoriteImageTouched(_ gestureRecognizer: UITapGestureRecognizer) {
         guard let quote = homeViewModel?.randomQuote else { return }
-        homeViewModel?.saveQuote(quote: quote, completion: {
-            DispatchQueue.main.async {
-                self.favoriteImage.image = .bookmarkFilled
-            }
-        })
+        if (self.favoriteImage.image == .bookmarkFilled) {
+            homeViewModel?.deleteFavoriteQuote(quote: quote, completion: {
+                DispatchQueue.main.async {
+                    self.favoriteImage.image = .bookmark
+                }
+            })
+        }
+        else {
+            homeViewModel?.saveFavoriteQuote(quote: quote, completion: {
+                DispatchQueue.main.async {
+                    self.favoriteImage.image = .bookmarkFilled
+                }
+            })
+        }
     }
 }

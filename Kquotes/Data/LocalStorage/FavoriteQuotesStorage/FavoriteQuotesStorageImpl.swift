@@ -17,14 +17,12 @@ final class FavoriteQuotesStorageImpl {
 
     // MARK: - Private
 
-//    private func fetchRequest() -> NSFetchRequest<MoviesRequestEntity> {
-//        let request: NSFetchRequest = MoviesRequestEntity.fetchRequest()
-//        request.predicate = NSPredicate(format: "%K = %@ AND %K = %d",
-//                                        #keyPath(MoviesRequestEntity.query), requestDto.query,
-//                                        #keyPath(MoviesRequestEntity.page), requestDto.page)
-//        return request
-//    }
-//
+    private func fetchRequest(quote: Quote) -> NSFetchRequest<QuoteEntity> {
+        let request: NSFetchRequest<QuoteEntity> = QuoteEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "quote == %@", quote.quote)
+        return request
+    }
+
 //    private func deleteResponse(
 //        for requestDto: MoviesRequestDTO,
 //        in context: NSManagedObjectContext
@@ -42,6 +40,7 @@ final class FavoriteQuotesStorageImpl {
 }
 
 extension FavoriteQuotesStorageImpl: FavoriteQuotesStorage {
+    
     func fetchFavorites(
         completion: @escaping (Result<[Quote]?, Error>) -> Void
     ) {
@@ -66,6 +65,29 @@ extension FavoriteQuotesStorageImpl: FavoriteQuotesStorage {
             } catch {
                 // TODO: - Log to Crashlytics
                 debugPrint("FavoriteQuotesStorageImpl Unresolved error \(error), \((error as NSError).userInfo)")
+            }
+        }
+    }
+    
+    func delete(quote: Quote, completion: @escaping () -> Void) {
+        coreDataStorage.performBackgroundTask { context in
+            do {
+                // Fetch request to get the entity matching the quote
+                let fetchRequest = self.fetchRequest(quote: quote)
+                
+                // If a match is found, delete the entity
+                do {
+                    if let result = try context.fetch(fetchRequest).first {
+                        context.delete(result)
+                        try context.save()
+                        completion()
+                    }
+                } catch {
+                    throw(error)
+                }
+            } catch {
+                // Handle any errors that occur during fetch or delete
+                print("Failed to delete quote: \(error)")
             }
         }
     }
