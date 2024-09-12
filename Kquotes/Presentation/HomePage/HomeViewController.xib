@@ -12,6 +12,8 @@
             <connections>
                 <outlet property="authorLabel" destination="ohV-Rk-ufK" id="tcb-ys-Lbf"/>
                 <outlet property="favoriteImage" destination="Jd6-Zg-npj" id="9wg-FH-HCm"/>
+                <outlet property="favoriteTableView" destination="kL9-Wd-VOy" id="P9v-ar-wIl"/>
+                <outlet property="homeBookmarkToggleImage" destination="GBz-rl-xWT" id="g8H-i4-ffX"/>
                 <outlet property="loadMoreLabel" destination="X8q-a0-Kot" id="ecC-Z2-0V0"/>
                 <outlet property="menuButton" destination="RUM-ud-lCK" id="XRS-nz-N5C"/>
                 <outlet property="quoteLabel" destination="zP2-iY-sLF" id="HU8-vB-rwI"/>
@@ -76,6 +78,18 @@
                                 <constraint firstAttribute="height" constant="25" id="KAR-ig-Nhx"/>
                             </constraints>
                         </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="bookmark.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="GBz-rl-xWT">
+                            <rect key="frame" x="311" y="7" width="30" height="27.5"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="KXj-Xx-9LR"/>
+                                <constraint firstAttribute="width" constant="30" id="l8d-pu-kre"/>
+                            </constraints>
+                        </imageView>
+                        <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kL9-Wd-VOy">
+                            <rect key="frame" x="0.0" y="35.5" width="414" height="749"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="ohV-Rk-ufK" firstAttribute="leading" secondItem="zpO-Sr-FBO" secondAttribute="leading" constant="32" id="3N9-z2-Yr5"/>
@@ -83,19 +97,25 @@
                         <constraint firstItem="zP2-iY-sLF" firstAttribute="centerX" secondItem="zpO-Sr-FBO" secondAttribute="centerX" id="6EU-YK-CJU"/>
                         <constraint firstItem="Jd6-Zg-npj" firstAttribute="centerY" secondItem="X8q-a0-Kot" secondAttribute="centerY" id="CAl-TC-pbm"/>
                         <constraint firstItem="X8q-a0-Kot" firstAttribute="leading" secondItem="zpO-Sr-FBO" secondAttribute="leading" constant="32" id="Da0-ia-m7h"/>
+                        <constraint firstItem="kL9-Wd-VOy" firstAttribute="top" secondItem="GBz-rl-xWT" secondAttribute="bottom" id="G8k-BG-wuS"/>
                         <constraint firstAttribute="trailing" secondItem="zP2-iY-sLF" secondAttribute="trailing" constant="32" id="J0m-WW-ckH"/>
                         <constraint firstItem="Jd6-Zg-npj" firstAttribute="leading" secondItem="X8q-a0-Kot" secondAttribute="trailing" constant="32" id="JF8-Mb-mLn"/>
+                        <constraint firstItem="RUM-ud-lCK" firstAttribute="leading" secondItem="GBz-rl-xWT" secondAttribute="trailing" constant="16" id="L3x-ea-7ko"/>
                         <constraint firstAttribute="bottom" secondItem="X8q-a0-Kot" secondAttribute="bottom" constant="32" id="L5I-BI-dvV"/>
                         <constraint firstItem="xwZ-h1-X0o" firstAttribute="centerY" secondItem="RUM-ud-lCK" secondAttribute="centerY" id="Ns0-JZ-ybt"/>
                         <constraint firstAttribute="trailing" secondItem="Gnj-KR-6Ql" secondAttribute="trailing" constant="32" id="Pg5-Zw-KCG"/>
                         <constraint firstItem="Gnj-KR-6Ql" firstAttribute="centerY" secondItem="Jd6-Zg-npj" secondAttribute="centerY" id="SSN-de-KS0"/>
+                        <constraint firstItem="kL9-Wd-VOy" firstAttribute="leading" secondItem="zpO-Sr-FBO" secondAttribute="leading" id="c81-n4-sq6"/>
                         <constraint firstAttribute="trailing" secondItem="ohV-Rk-ufK" secondAttribute="trailing" constant="32" id="cOD-IN-KIW"/>
                         <constraint firstItem="RUM-ud-lCK" firstAttribute="top" secondItem="zpO-Sr-FBO" secondAttribute="top" constant="8" id="d6b-Mw-LYh"/>
                         <constraint firstItem="Gnj-KR-6Ql" firstAttribute="leading" secondItem="Jd6-Zg-npj" secondAttribute="trailing" constant="40" id="iD4-zK-gqs"/>
+                        <constraint firstAttribute="trailing" secondItem="kL9-Wd-VOy" secondAttribute="trailing" id="iop-Ue-sDl"/>
                         <constraint firstItem="zP2-iY-sLF" firstAttribute="centerY" secondItem="zpO-Sr-FBO" secondAttribute="centerY" constant="-32" id="pMo-HG-Vgr"/>
+                        <constraint firstItem="GBz-rl-xWT" firstAttribute="centerY" secondItem="RUM-ud-lCK" secondAttribute="centerY" id="ppa-1D-wo8"/>
                         <constraint firstItem="zP2-iY-sLF" firstAttribute="leading" secondItem="zpO-Sr-FBO" secondAttribute="leading" constant="32" id="saW-bP-gmy"/>
                         <constraint firstItem="xwZ-h1-X0o" firstAttribute="leading" secondItem="zpO-Sr-FBO" secondAttribute="leading" constant="32" id="tbb-3j-1YR"/>
                         <constraint firstAttribute="trailing" secondItem="RUM-ud-lCK" secondAttribute="trailing" constant="32" id="xEe-KC-4Mw"/>
+                        <constraint firstAttribute="bottom" secondItem="kL9-Wd-VOy" secondAttribute="bottom" constant="29.5" id="xWh-IC-oj1"/>
                     </constraints>
                 </view>
             </subviews>
@@ -112,6 +132,7 @@
     </objects>
     <resources>
         <image name="bookmark" width="43" height="54"/>
+        <image name="bookmark.square" catalog="system" width="128" height="114"/>
         <image name="menu" width="68" height="51"/>
         <image name="quote" width="33" height="50"/>
         <image name="share" width="44" height="54"/>

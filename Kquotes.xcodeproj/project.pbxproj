@@ -54,6 +54,8 @@
 		E564CFFC2C9198AB00E48AE1 /* HomeViewDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFFB2C9198AB00E48AE1 /* HomeViewDIContainer.swift */; };
 		E564CFFE2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFFD2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift */; };
 		E564D0002C9289FB00E48AE1 /* DeleteFavoriteQuoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFFF2C9289FB00E48AE1 /* DeleteFavoriteQuoteUseCase.swift */; };
+		E564D0072C92D7DC00E48AE1 /* FavoriteItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E564D0062C92D7DC00E48AE1 /* FavoriteItemCell.xib */; };
+		E564D0092C92DBC100E48AE1 /* FavoriteItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564D0082C92DBC100E48AE1 /* FavoriteItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,8 @@
 		E564CFFB2C9198AB00E48AE1 /* HomeViewDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDIContainer.swift; sourceTree = "<group>"; };
 		E564CFFD2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFavoriteQuotesUseCase.swift; sourceTree = "<group>"; };
 		E564CFFF2C9289FB00E48AE1 /* DeleteFavoriteQuoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFavoriteQuoteUseCase.swift; sourceTree = "<group>"; };
+		E564D0062C92D7DC00E48AE1 /* FavoriteItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteItemCell.xib; sourceTree = "<group>"; };
+		E564D0082C92DBC100E48AE1 /* FavoriteItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,10 +242,11 @@
 		E5224C762C8AEE4500E205FD /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				E564D0022C92CFAB00E48AE1 /* FavoriteListTableView */,
+				E564D0012C92CF9600E48AE1 /* ViewModel */,
 				E564CF9E2C8EDC2100E48AE1 /* Coordinator */,
 				E5224C772C8AEE7100E205FD /* HomeViewController.swift */,
 				E5224C782C8AEE7100E205FD /* HomeViewController.xib */,
-				E564CFA62C8EE13200E48AE1 /* HomeViewModel.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -465,6 +470,31 @@
 			path = DIContainer;
 			sourceTree = "<group>";
 		};
+		E564D0012C92CF9600E48AE1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFA62C8EE13200E48AE1 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E564D0022C92CFAB00E48AE1 /* FavoriteListTableView */ = {
+			isa = PBXGroup;
+			children = (
+				E564D0052C92D79800E48AE1 /* Cells */,
+			);
+			path = FavoriteListTableView;
+			sourceTree = "<group>";
+		};
+		E564D0052C92D79800E48AE1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E564D0062C92D7DC00E48AE1 /* FavoriteItemCell.xib */,
+				E564D0082C92DBC100E48AE1 /* FavoriteItemCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -569,6 +599,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E564D0072C92D7DC00E48AE1 /* FavoriteItemCell.xib in Resources */,
 				E5224C4E2C8AB9CE00E205FD /* LaunchScreen.storyboard in Resources */,
 				E564CFBE2C8F017800E48AE1 /* Key.plist in Resources */,
 				E5224C4B2C8AB9CE00E205FD /* Assets.xcassets in Resources */,
@@ -606,6 +637,7 @@
 				E564CFDB2C8FF79600E48AE1 /* RepositoryTask.swift in Sources */,
 				E564CFA02C8EDC3700E48AE1 /* HomeViewCoordinator.swift in Sources */,
 				E564CFEB2C917F8800E48AE1 /* CoreDataStorage.swift in Sources */,
+				E564D0092C92DBC100E48AE1 /* FavoriteItemCell.swift in Sources */,
 				E564CFB72C8EF2DE00E48AE1 /* UseCase.swift in Sources */,
 				E564CFD82C8FDF9600E48AE1 /* NetworkConfig.swift in Sources */,
 				E564CFC22C8F048500E48AE1 /* QuoteRepository.swift in Sources */,
