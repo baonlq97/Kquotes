@@ -161,8 +161,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         if let quotes = self.homeViewModel?.favoriteQuotes {
-            cell.quoteLabel.text = quotes[indexPath.row].quote
-            cell.authorLabel.text = quotes[indexPath.row].author
+            cell.bind(quote: quotes[indexPath.row])
+            cell.privateButtonTouched = { [weak self] quote in
+                self?.homeViewModel?.deleteFavoriteQuote(quote: quote, completion: {
+                    DispatchQueue.main.async {
+                        // Check if current quote is the same as deleted quote
+                        if (self?.homeViewModel?.randomQuote?.quote == quote.quote) {
+                            // Reset the bookmart image to unsave
+                            self?.favoriteImage.image = .bookmark
+                        }
+                        tableView.reloadData()
+                    }
+                })
+            }
         }
         
         return cell
