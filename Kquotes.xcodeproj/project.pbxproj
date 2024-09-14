@@ -57,6 +57,10 @@
 		E564D0072C92D7DC00E48AE1 /* FavoriteItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E564D0062C92D7DC00E48AE1 /* FavoriteItemCell.xib */; };
 		E564D0092C92DBC100E48AE1 /* FavoriteItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564D0082C92DBC100E48AE1 /* FavoriteItemCell.swift */; };
 		E564D00B2C9300B400E48AE1 /* HomeViewContoller+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564D00A2C9300B400E48AE1 /* HomeViewContoller+TableView.swift */; };
+		E564D0142C94329000E48AE1 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564D0122C94329000E48AE1 /* TagCollectionViewCell.swift */; };
+		E564D0152C94329000E48AE1 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E564D0132C94329000E48AE1 /* TagCollectionViewCell.xib */; };
+		E564D0172C9436FC00E48AE1 /* SettingViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564D0162C9436FC00E48AE1 /* SettingViewController+CollectionView.swift */; };
+		E564D0192C944DE900E48AE1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564D0182C944DE900E48AE1 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +135,10 @@
 		E564D0062C92D7DC00E48AE1 /* FavoriteItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteItemCell.xib; sourceTree = "<group>"; };
 		E564D0082C92DBC100E48AE1 /* FavoriteItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteItemCell.swift; sourceTree = "<group>"; };
 		E564D00A2C9300B400E48AE1 /* HomeViewContoller+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewContoller+TableView.swift"; sourceTree = "<group>"; };
+		E564D0122C94329000E48AE1 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		E564D0132C94329000E48AE1 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
+		E564D0162C9436FC00E48AE1 /* SettingViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		E564D0182C944DE900E48AE1 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,10 +264,11 @@
 		E5224C7B2C8B100300E205FD /* SettingPage */ = {
 			isa = PBXGroup;
 			children = (
+				E564D00E2C942EF200E48AE1 /* CategoryListGridView */,
+				E564D00C2C942D2500E48AE1 /* ViewModel */,
 				E564CF9D2C8EDC1600E48AE1 /* Coordinator */,
 				E5224C7C2C8B101600E205FD /* SettingViewController.swift */,
 				E5224C7D2C8B101600E205FD /* SettingViewController.xib */,
-				E564CFAA2C8EE67300E48AE1 /* SettingViewModel.swift */,
 			);
 			path = SettingPage;
 			sourceTree = "<group>";
@@ -498,6 +507,33 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		E564D00C2C942D2500E48AE1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFAA2C8EE67300E48AE1 /* SettingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E564D00E2C942EF200E48AE1 /* CategoryListGridView */ = {
+			isa = PBXGroup;
+			children = (
+				E564D00F2C942F0600E48AE1 /* Cells */,
+				E564D0162C9436FC00E48AE1 /* SettingViewController+CollectionView.swift */,
+				E564D0182C944DE900E48AE1 /* LeftAlignedCollectionViewFlowLayout.swift */,
+			);
+			path = CategoryListGridView;
+			sourceTree = "<group>";
+		};
+		E564D00F2C942F0600E48AE1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E564D0122C94329000E48AE1 /* TagCollectionViewCell.swift */,
+				E564D0132C94329000E48AE1 /* TagCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -603,6 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E564D0072C92D7DC00E48AE1 /* FavoriteItemCell.xib in Resources */,
+				E564D0152C94329000E48AE1 /* TagCollectionViewCell.xib in Resources */,
 				E5224C4E2C8AB9CE00E205FD /* LaunchScreen.storyboard in Resources */,
 				E564CFBE2C8F017800E48AE1 /* Key.plist in Resources */,
 				E5224C4B2C8AB9CE00E205FD /* Assets.xcassets in Resources */,
@@ -635,6 +672,7 @@
 				E564CFF22C9180F600E48AE1 /* FavoriteQuotesStorage.swift in Sources */,
 				E564CFD72C8FDF9600E48AE1 /* NetworkService.swift in Sources */,
 				E564CFE22C8FF84400E48AE1 /* QuoteResponseDTO+Mapping.swift in Sources */,
+				E564D0142C94329000E48AE1 /* TagCollectionViewCell.swift in Sources */,
 				E564CFE82C9007C200E48AE1 /* AppDIContainer.swift in Sources */,
 				E564CFCA2C8FDCB500E48AE1 /* Cancellable.swift in Sources */,
 				E564CFDB2C8FF79600E48AE1 /* RepositoryTask.swift in Sources */,
@@ -643,6 +681,7 @@
 				E564D0092C92DBC100E48AE1 /* FavoriteItemCell.swift in Sources */,
 				E564CFB72C8EF2DE00E48AE1 /* UseCase.swift in Sources */,
 				E564CFD82C8FDF9600E48AE1 /* NetworkConfig.swift in Sources */,
+				E564D0172C9436FC00E48AE1 /* SettingViewController+CollectionView.swift in Sources */,
 				E564CFC22C8F048500E48AE1 /* QuoteRepository.swift in Sources */,
 				E564CFD52C8FDF9600E48AE1 /* DataTransferService.swift in Sources */,
 				E564CFC92C8FDCB500E48AE1 /* DispatchQueueType.swift in Sources */,
@@ -666,6 +705,7 @@
 				E564CFDD2C8FF7E600E48AE1 /* APIEndpoints.swift in Sources */,
 				E564D0002C9289FB00E48AE1 /* DeleteFavoriteQuoteUseCase.swift in Sources */,
 				E564CF992C8ED4D000E48AE1 /* BaseCoordinator.swift in Sources */,
+				E564D0192C944DE900E48AE1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				E564CFE42C8FFA7900E48AE1 /* QuoteQuery.swift in Sources */,
 				E564CFFC2C9198AB00E48AE1 /* HomeViewDIContainer.swift in Sources */,
 				E564CFA92C8EE61F00E48AE1 /* SettingViewCoordinator.swift in Sources */,
