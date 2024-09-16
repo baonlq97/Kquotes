@@ -8,4 +8,13 @@
 import Foundation
 
 class SettingViewModel: BaseViewModel {
+    var categoryManager = QuoteCategoryStorageImpl.shared
+    
+    func isCategorySelected(_ category: Category) -> Bool{
+        return categoryManager.isCategorySelected(category)
+    }
+    
+    func selectCategory(_ category: Category) {
+        categoryManager.selectCategory(category)
+    }
 }

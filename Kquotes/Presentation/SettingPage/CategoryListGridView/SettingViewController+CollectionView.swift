@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 
 extension SettingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-//    var tags: [String] = ["Science", "Technology", "Math", "Literature", "Philosophy", "Engineering"]
 
     internal func setupCollectionView() {
         // Register your custom cell nib
@@ -21,7 +19,7 @@ extension SettingViewController: UICollectionViewDelegate, UICollectionViewDataS
     // MARK: UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ["Science", "Technology", "Math", "Literature", "Philosophy", "Engineering"].count
+        return Category.allCategories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -32,7 +30,20 @@ extension SettingViewController: UICollectionViewDelegate, UICollectionViewDataS
             return UICollectionViewCell()
         }
         
-        cell.tagLabel.text = ["Science", "Technology", "Math", "Literature", "Philosophy", "Engineering"][indexPath.item]
+        
+        let category = Category.allCategories[indexPath.item]
+        if (category == Category.all) {
+            cell.tagLabel.text = "all categories"
+        }
+        else {
+            cell.tagLabel.text = category.rawValue
+        }
+        
+        if let isSelected = settingViewModel?.isCategorySelected(category) {
+            cell.background.backgroundColor = isSelected ? .systemGray : .tertiarySystemGroupedBackground
+        } else {
+            cell.background.backgroundColor = .tertiarySystemGroupedBackground
+        }
         
         return cell
     }
@@ -40,15 +51,26 @@ extension SettingViewController: UICollectionViewDelegate, UICollectionViewDataS
     // MARK: UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // Dequeue the cell
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: TagCollectionViewCell.identifier,
-            for: indexPath
-        ) as? TagCollectionViewCell else {
-            return .zero
+        var label = ""
+        
+        if (Category.allCategories[indexPath.item] == Category.all) {
+            label = "all categories"
         }
-
-        // Call the method to adjust the cell size dynamically based on the label content
-        return cell.adjustCellSize(height: 50, label: ["Science", "Technology", "Math", "Literature", "Philosophy", "Engineering"][indexPath.item])
+        else {
+            label = Category.allCategories[indexPath.item].rawValue
+        }
+        
+        let labelWidth = (label as NSString).size(withAttributes: [.font: UIFont.systemFont(ofSize: 17)]).width
+        
+        let padding: CGFloat = 24
+        let cellWidth = labelWidth + padding
+        
+        return CGSize(width: cellWidth, height: 48)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedCategory = Category.allCategories[indexPath.item]
+        settingViewModel?.selectCategory(selectedCategory)
+        collectionView.reloadData()
     }
 }

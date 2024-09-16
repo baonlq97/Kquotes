@@ -14,6 +14,8 @@ class HomeViewModel: BaseViewModel {
     private let saveFavoriteQuoteUseCase: SaveFavoriteQuoteUseCase
     private let deleteFavoriteQuoteUseCase: DeleteFavoriteQuoteUseCase
     
+    private let categoryManager = QuoteCategoryStorageImpl.shared
+    
     var randomQuote: Quote? {
         didSet {
             self.quoteUpdated?()
@@ -45,7 +47,7 @@ class HomeViewModel: BaseViewModel {
     }
     
     func fetchRandomQuote() {
-        quoteLoadTask = fetchQuoteUseCase.execute(requestValue: FetchRandomQuoteRequestValue(query: QuoteQuery(category: "happiness")),
+        quoteLoadTask = fetchQuoteUseCase.execute(requestValue: FetchRandomQuoteRequestValue(query: QuoteQuery(category: categoryManager.selectedCategoryRawValue())),
                                   completion: { [weak self] result in
             self?.mainQueue.async {
                 switch result {

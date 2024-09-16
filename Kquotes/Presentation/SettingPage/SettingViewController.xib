@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController" customModule="Kquotes" customModuleProvider="target">
             <connections>
+                <outlet property="arrowLeftImage" destination="hEh-at-mk9" id="jXV-tW-EY2"/>
                 <outlet property="tagCollectionView" destination="k0Z-xx-hQg" id="nXt-Ta-yGH"/>
+                <outlet property="tagCollectionViewHeight" destination="OaR-ep-g3t" id="Muy-yG-Jiw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
