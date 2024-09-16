@@ -20,6 +20,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if let quotes = self.homeViewModel?.favoriteQuotes {
             count = quotes.count
         }
+        
+        if (count == 0) {
+            let label = UILabel()
+            label.text = "No favorite item added"
+            label.textAlignment = .center
+            tableView.backgroundView = label
+            tableView.separatorStyle = .none
+        }
+        else {
+            tableView.backgroundView = nil
+            tableView.separatorStyle = .singleLine
+        }
+        
         return count
     }
     
