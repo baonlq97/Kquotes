@@ -47,6 +47,9 @@ extension FavoriteQuotesStorageImpl: FavoriteQuotesStorage {
         coreDataStorage.performBackgroundTask { context in
             do {
                 let request: NSFetchRequest = QuoteEntity.fetchRequest()
+                let sortDescriptor = NSSortDescriptor(key: "createdAt", ascending: false)
+                request.sortDescriptors = [sortDescriptor]
+                
                 let requestEntities = try context.fetch(request)
 
                 completion(.success(QuoteEntity.toQuotes(requestEntities)))
