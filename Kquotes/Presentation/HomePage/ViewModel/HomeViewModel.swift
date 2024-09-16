@@ -66,7 +66,7 @@ class HomeViewModel: BaseViewModel {
     
     func saveFavoriteQuote(quote: Quote, completion: @escaping () -> Void) {
         saveFavoriteQuoteUseCase.execute(quote: quote, completion: {
-            self.favoriteQuotes?.append(quote)
+            self.favoriteQuotes?.insert(quote, at: 0)
             completion()
         })
     }

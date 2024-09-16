@@ -3,6 +3,7 @@
     <entity name="QuoteEntity" representedClassName="QuoteEntity" syncable="YES" codeGenerationType="class">
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="quote" optional="YES" attributeType="String"/>
     </entity>
 </model>

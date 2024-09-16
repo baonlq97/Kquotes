@@ -18,6 +18,11 @@ extension QuoteEntity {
     static func toQuotes(_ quoteEntities: [QuoteEntity]) -> [Quote] {
         return quoteEntities.map { $0.toQuote() }
     }
+    
+    public override func awakeFromInsert() {
+        super.awakeFromInsert()
+        self.createdAt = Date()
+    }
 }
 
 extension Quote {
