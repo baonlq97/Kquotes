@@ -17,6 +17,9 @@
 		E5224C7A2C8AEE7100E205FD /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5224C782C8AEE7100E205FD /* HomeViewController.xib */; };
 		E5224C7E2C8B101600E205FD /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5224C7C2C8B101600E205FD /* SettingViewController.swift */; };
 		E5224C7F2C8B101600E205FD /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5224C7D2C8B101600E205FD /* SettingViewController.xib */; };
+		E5247D022C97E5200084817D /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247D012C97E5200084817D /* UserDefaultsStorage.swift */; };
+		E5247D052C97E5720084817D /* QuoteCategoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247D042C97E5720084817D /* QuoteCategoryStorage.swift */; };
+		E5247D082C97E7D40084817D /* QuoteCategoryStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247D072C97E7D40084817D /* QuoteCategoryStorageImpl.swift */; };
 		E564CF992C8ED4D000E48AE1 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CF982C8ED4D000E48AE1 /* BaseCoordinator.swift */; };
 		E564CFA02C8EDC3700E48AE1 /* HomeViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CF9F2C8EDC3700E48AE1 /* HomeViewCoordinator.swift */; };
 		E564CFA32C8EDDB900E48AE1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564CFA22C8EDDB900E48AE1 /* BaseViewController.swift */; };
@@ -57,6 +60,10 @@
 		E564D0072C92D7DC00E48AE1 /* FavoriteItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E564D0062C92D7DC00E48AE1 /* FavoriteItemCell.xib */; };
 		E564D0092C92DBC100E48AE1 /* FavoriteItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564D0082C92DBC100E48AE1 /* FavoriteItemCell.swift */; };
 		E564D00B2C9300B400E48AE1 /* HomeViewContoller+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564D00A2C9300B400E48AE1 /* HomeViewContoller+TableView.swift */; };
+		E564D0142C94329000E48AE1 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564D0122C94329000E48AE1 /* TagCollectionViewCell.swift */; };
+		E564D0152C94329000E48AE1 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E564D0132C94329000E48AE1 /* TagCollectionViewCell.xib */; };
+		E564D0172C9436FC00E48AE1 /* SettingViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564D0162C9436FC00E48AE1 /* SettingViewController+CollectionView.swift */; };
+		E564D0192C944DE900E48AE1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564D0182C944DE900E48AE1 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +98,9 @@
 		E5224C782C8AEE7100E205FD /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		E5224C7C2C8B101600E205FD /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E5224C7D2C8B101600E205FD /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		E5247D012C97E5200084817D /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		E5247D042C97E5720084817D /* QuoteCategoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCategoryStorage.swift; sourceTree = "<group>"; };
+		E5247D072C97E7D40084817D /* QuoteCategoryStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCategoryStorageImpl.swift; sourceTree = "<group>"; };
 		E564CF982C8ED4D000E48AE1 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		E564CF9F2C8EDC3700E48AE1 /* HomeViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCoordinator.swift; sourceTree = "<group>"; };
 		E564CFA22C8EDDB900E48AE1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +141,10 @@
 		E564D0062C92D7DC00E48AE1 /* FavoriteItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteItemCell.xib; sourceTree = "<group>"; };
 		E564D0082C92DBC100E48AE1 /* FavoriteItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteItemCell.swift; sourceTree = "<group>"; };
 		E564D00A2C9300B400E48AE1 /* HomeViewContoller+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewContoller+TableView.swift"; sourceTree = "<group>"; };
+		E564D0122C94329000E48AE1 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		E564D0132C94329000E48AE1 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
+		E564D0162C9436FC00E48AE1 /* SettingViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		E564D0182C944DE900E48AE1 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,12 +270,48 @@
 		E5224C7B2C8B100300E205FD /* SettingPage */ = {
 			isa = PBXGroup;
 			children = (
+				E564D00E2C942EF200E48AE1 /* CategoryListGridView */,
+				E564D00C2C942D2500E48AE1 /* ViewModel */,
 				E564CF9D2C8EDC1600E48AE1 /* Coordinator */,
 				E5224C7C2C8B101600E205FD /* SettingViewController.swift */,
 				E5224C7D2C8B101600E205FD /* SettingViewController.xib */,
-				E564CFAA2C8EE67300E48AE1 /* SettingViewModel.swift */,
 			);
 			path = SettingPage;
+			sourceTree = "<group>";
+		};
+		E5247CFE2C97E4820084817D /* HomeViewUseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFE52C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift */,
+				E564CFF82C91963A00E48AE1 /* SaveFavoriteQuoteUseCase.swift */,
+				E564CFFD2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift */,
+				E564CFFF2C9289FB00E48AE1 /* DeleteFavoriteQuoteUseCase.swift */,
+			);
+			path = HomeViewUseCases;
+			sourceTree = "<group>";
+		};
+		E5247CFF2C97E49B0084817D /* SettingViewUseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingViewUseCases;
+			sourceTree = "<group>";
+		};
+		E5247D002C97E4B30084817D /* UserDefaultsStorage */ = {
+			isa = PBXGroup;
+			children = (
+				E5247D012C97E5200084817D /* UserDefaultsStorage.swift */,
+			);
+			path = UserDefaultsStorage;
+			sourceTree = "<group>";
+		};
+		E5247D032C97E5430084817D /* QuoteCategoryUserDefaultsStorage */ = {
+			isa = PBXGroup;
+			children = (
+				E5247D042C97E5720084817D /* QuoteCategoryStorage.swift */,
+				E5247D072C97E7D40084817D /* QuoteCategoryStorageImpl.swift */,
+			);
+			path = QuoteCategoryUserDefaultsStorage;
 			sourceTree = "<group>";
 		};
 		E564CF9D2C8EDC1600E48AE1 /* Coordinator */ = {
@@ -330,11 +380,9 @@
 		E564CFB32C8EF28100E48AE1 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				E5247CFF2C97E49B0084817D /* SettingViewUseCases */,
+				E5247CFE2C97E4820084817D /* HomeViewUseCases */,
 				E564CFB42C8EF28900E48AE1 /* Protocol */,
-				E564CFE52C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift */,
-				E564CFF82C91963A00E48AE1 /* SaveFavoriteQuoteUseCase.swift */,
-				E564CFFD2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift */,
-				E564CFFF2C9289FB00E48AE1 /* DeleteFavoriteQuoteUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -430,7 +478,9 @@
 		E564CFE92C917F7300E48AE1 /* LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
-				E564CFF02C9180A300E48AE1 /* FavoriteQuotesStorage */,
+				E5247D032C97E5430084817D /* QuoteCategoryUserDefaultsStorage */,
+				E564CFF02C9180A300E48AE1 /* FavoriteQuotesCoreDataStorage */,
+				E5247D002C97E4B30084817D /* UserDefaultsStorage */,
 				E564CFEF2C91807300E48AE1 /* CoreDataStorage */,
 			);
 			path = LocalStorage;
@@ -445,14 +495,14 @@
 			path = CoreDataStorage;
 			sourceTree = "<group>";
 		};
-		E564CFF02C9180A300E48AE1 /* FavoriteQuotesStorage */ = {
+		E564CFF02C9180A300E48AE1 /* FavoriteQuotesCoreDataStorage */ = {
 			isa = PBXGroup;
 			children = (
 				E564CFF12C9180F600E48AE1 /* FavoriteQuotesStorage.swift */,
 				E564CFF32C9181AF00E48AE1 /* FavoriteQuotesStorageImpl.swift */,
 				E564CFF52C91837A00E48AE1 /* EntityMapping */,
 			);
-			path = FavoriteQuotesStorage;
+			path = FavoriteQuotesCoreDataStorage;
 			sourceTree = "<group>";
 		};
 		E564CFF52C91837A00E48AE1 /* EntityMapping */ = {
@@ -494,6 +544,33 @@
 			children = (
 				E564D0062C92D7DC00E48AE1 /* FavoriteItemCell.xib */,
 				E564D0082C92DBC100E48AE1 /* FavoriteItemCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E564D00C2C942D2500E48AE1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E564CFAA2C8EE67300E48AE1 /* SettingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E564D00E2C942EF200E48AE1 /* CategoryListGridView */ = {
+			isa = PBXGroup;
+			children = (
+				E564D00F2C942F0600E48AE1 /* Cells */,
+				E564D0162C9436FC00E48AE1 /* SettingViewController+CollectionView.swift */,
+				E564D0182C944DE900E48AE1 /* LeftAlignedCollectionViewFlowLayout.swift */,
+			);
+			path = CategoryListGridView;
+			sourceTree = "<group>";
+		};
+		E564D00F2C942F0600E48AE1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E564D0122C94329000E48AE1 /* TagCollectionViewCell.swift */,
+				E564D0132C94329000E48AE1 /* TagCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -603,6 +680,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E564D0072C92D7DC00E48AE1 /* FavoriteItemCell.xib in Resources */,
+				E564D0152C94329000E48AE1 /* TagCollectionViewCell.xib in Resources */,
 				E5224C4E2C8AB9CE00E205FD /* LaunchScreen.storyboard in Resources */,
 				E564CFBE2C8F017800E48AE1 /* Key.plist in Resources */,
 				E5224C4B2C8AB9CE00E205FD /* Assets.xcassets in Resources */,
@@ -635,7 +713,10 @@
 				E564CFF22C9180F600E48AE1 /* FavoriteQuotesStorage.swift in Sources */,
 				E564CFD72C8FDF9600E48AE1 /* NetworkService.swift in Sources */,
 				E564CFE22C8FF84400E48AE1 /* QuoteResponseDTO+Mapping.swift in Sources */,
+				E564D0142C94329000E48AE1 /* TagCollectionViewCell.swift in Sources */,
+				E5247D052C97E5720084817D /* QuoteCategoryStorage.swift in Sources */,
 				E564CFE82C9007C200E48AE1 /* AppDIContainer.swift in Sources */,
+				E5247D082C97E7D40084817D /* QuoteCategoryStorageImpl.swift in Sources */,
 				E564CFCA2C8FDCB500E48AE1 /* Cancellable.swift in Sources */,
 				E564CFDB2C8FF79600E48AE1 /* RepositoryTask.swift in Sources */,
 				E564CFA02C8EDC3700E48AE1 /* HomeViewCoordinator.swift in Sources */,
@@ -643,6 +724,7 @@
 				E564D0092C92DBC100E48AE1 /* FavoriteItemCell.swift in Sources */,
 				E564CFB72C8EF2DE00E48AE1 /* UseCase.swift in Sources */,
 				E564CFD82C8FDF9600E48AE1 /* NetworkConfig.swift in Sources */,
+				E564D0172C9436FC00E48AE1 /* SettingViewController+CollectionView.swift in Sources */,
 				E564CFC22C8F048500E48AE1 /* QuoteRepository.swift in Sources */,
 				E564CFD52C8FDF9600E48AE1 /* DataTransferService.swift in Sources */,
 				E564CFC92C8FDCB500E48AE1 /* DispatchQueueType.swift in Sources */,
@@ -655,6 +737,7 @@
 				E564CFA72C8EE13200E48AE1 /* HomeViewModel.swift in Sources */,
 				E5224C792C8AEE7100E205FD /* HomeViewController.swift in Sources */,
 				E564CFE02C8FF83600E48AE1 /* QuoteRequestDTO+Mapping.swift in Sources */,
+				E5247D022C97E5200084817D /* UserDefaultsStorage.swift in Sources */,
 				E564CFF42C9181AF00E48AE1 /* FavoriteQuotesStorageImpl.swift in Sources */,
 				E564CFBC2C8EF36400E48AE1 /* Quote.swift in Sources */,
 				E564CFAF2C8EE72D00E48AE1 /* UIViewControler+Extension.swift in Sources */,
@@ -666,6 +749,7 @@
 				E564CFDD2C8FF7E600E48AE1 /* APIEndpoints.swift in Sources */,
 				E564D0002C9289FB00E48AE1 /* DeleteFavoriteQuoteUseCase.swift in Sources */,
 				E564CF992C8ED4D000E48AE1 /* BaseCoordinator.swift in Sources */,
+				E564D0192C944DE900E48AE1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				E564CFE42C8FFA7900E48AE1 /* QuoteQuery.swift in Sources */,
 				E564CFFC2C9198AB00E48AE1 /* HomeViewDIContainer.swift in Sources */,
 				E564CFA92C8EE61F00E48AE1 /* SettingViewCoordinator.swift in Sources */,

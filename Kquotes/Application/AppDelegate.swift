@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         guard let window = window else { return true }
         
+        let categoryManager = QuoteCategoryStorageImpl.shared
+        if (categoryManager.selectedCategory == nil) {
+            categoryManager.selectCategory(Category.all)
+        }
+        
         HomeViewCoordinator.shared.start(data: window)
         
         return true
