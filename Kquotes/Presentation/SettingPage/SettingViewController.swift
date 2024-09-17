@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import BackgroundTasks
 
 class SettingViewController: BaseViewController {
     @IBOutlet internal weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var tagCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var arrowLeftImage: UIImageView!
+    @IBOutlet weak var quoteScheduleTime: UIDatePicker!
     
     internal var settingViewModel: SettingViewModel? {
         return viewModel as? SettingViewModel
@@ -31,6 +33,15 @@ class SettingViewController: BaseViewController {
         
         tagCollectionView.delegate = self
         tagCollectionView.dataSource = self
+        
+        setupQuoteScheduleTime()
+    }
+    
+    private func setupQuoteScheduleTime() {
+        if let scheduleTime = QuoteScheduleStorageImpl.shared.scheduleTime {
+            quoteScheduleTime.date = scheduleTime
+        }
+        quoteScheduleTime.addTarget(self, action: #selector(scheduleTimeChanged(_:)), for: .editingDidEnd)
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,5 +58,11 @@ extension SettingViewController {
     @objc
     private func arrowLeftImageTouched(_ gestureRecognizer: UITapGestureRecognizer) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc 
+    private func scheduleTimeChanged(_ sender: UIDatePicker) {
+        QuoteScheduleStorageImpl.shared.scheduleTime = sender.date
+        BackgroundTaskManager.shared.scheduleBackgroundTask()
     }
 }

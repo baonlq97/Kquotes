@@ -15,6 +15,7 @@ class HomeViewModel: BaseViewModel {
     private let deleteFavoriteQuoteUseCase: DeleteFavoriteQuoteUseCase
     
     private let categoryManager = QuoteCategoryStorageImpl.shared
+    private let scheduledQuoteManager = QuoteScheduleStorageImpl.shared
     
     var randomQuote: Quote? {
         didSet {
@@ -47,17 +48,26 @@ class HomeViewModel: BaseViewModel {
     }
     
     func fetchRandomQuote() {
-        quoteLoadTask = fetchQuoteUseCase.execute(requestValue: FetchRandomQuoteRequestValue(query: QuoteQuery(category: categoryManager.selectedCategoryRawValue())),
-                                  completion: { [weak self] result in
-            self?.mainQueue.async {
-                switch result {
-                case .success(let quotes):
-                    self?.randomQuote = quotes.first // Assuming it's an array and you take the first one
-                case .failure(let error):
-                    print("Error fetching quote: \(error)")
+        let scheduledQuote = scheduledQuoteManager.scheduledQuote
+        
+        if (scheduledQuote != nil) {
+            self.randomQuote = scheduledQuote
+            scheduledQuoteManager.scheduledQuote = nil
+        }
+        else {
+            quoteLoadTask = fetchQuoteUseCase.execute(requestValue: FetchRandomQuoteRequestValue(
+                query: QuoteQuery(category: categoryManager.selectedCategoryRawValue())),
+                                                      completion: { [weak self] result in
+                self?.mainQueue.async {
+                    switch result {
+                    case .success(let quotes):
+                        self?.randomQuote = quotes.first // Assuming it's an array and you take the first one
+                    case .failure(let error):
+                        print("Error fetching quote: \(error)")
+                    }
                 }
-            }
-        })
+            })
+        }
     }
     
     func cancelCurrentTask() {

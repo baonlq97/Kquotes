@@ -47,6 +47,9 @@ class HomeViewController: BaseViewController {
         // Fetch the random quote
         homeViewModel?.fetchRandomQuote()
         homeViewModel?.fetchFavoriteQuotes()
+        
+        // Add observer to get quote from background task
+        NotificationCenter.default.addObserver(self, selector: #selector(updateQuoteLabel(_:)), name: Notification.Name("backgroundFetchedQuote"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,6 +80,10 @@ class HomeViewController: BaseViewController {
                 self?.favoriteTableView.reloadData()
             }
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -122,6 +129,18 @@ extension HomeViewController {
                     self.favoriteImage.image = .bookmarkFilled
                 }
             })
+        }
+    }
+    
+    @objc
+    private func updateQuoteLabel(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let newQuote = userInfo["quote"] as? Quote else {
+            return
+        }
+        
+        DispatchQueue.main.async {
+            self.homeViewModel?.fetchRandomQuote()
         }
     }
 }

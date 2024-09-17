@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E51722E42C997B2C0082E385 /* QuoteScheduleStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51722E32C997B2C0082E385 /* QuoteScheduleStorage.swift */; };
+		E51722E62C997BDE0082E385 /* QuoteScheduleStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51722E52C997BDE0082E385 /* QuoteScheduleStorageImpl.swift */; };
+		E51722E92C99812F0082E385 /* AppBackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51722E82C99812F0082E385 /* AppBackgroundTaskManager.swift */; };
 		E5224C422C8AB9CD00E205FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5224C412C8AB9CD00E205FD /* AppDelegate.swift */; };
 		E5224C4B2C8AB9CE00E205FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5224C4A2C8AB9CE00E205FD /* Assets.xcassets */; };
 		E5224C4E2C8AB9CE00E205FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5224C4C2C8AB9CE00E205FD /* LaunchScreen.storyboard */; };
@@ -84,6 +87,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E51722E32C997B2C0082E385 /* QuoteScheduleStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteScheduleStorage.swift; sourceTree = "<group>"; };
+		E51722E52C997BDE0082E385 /* QuoteScheduleStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteScheduleStorageImpl.swift; sourceTree = "<group>"; };
+		E51722E82C99812F0082E385 /* AppBackgroundTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackgroundTaskManager.swift; sourceTree = "<group>"; };
 		E5224C3E2C8AB9CD00E205FD /* Kquotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kquotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5224C412C8AB9CD00E205FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5224C4A2C8AB9CE00E205FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -172,6 +178,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E51722E22C997AF80082E385 /* QuoteScheduleUserDefaultsStorage */ = {
+			isa = PBXGroup;
+			children = (
+				E51722E32C997B2C0082E385 /* QuoteScheduleStorage.swift */,
+				E51722E52C997BDE0082E385 /* QuoteScheduleStorageImpl.swift */,
+			);
+			path = QuoteScheduleUserDefaultsStorage;
+			sourceTree = "<group>";
+		};
+		E51722E72C9981140082E385 /* AppBackgroundTask */ = {
+			isa = PBXGroup;
+			children = (
+				E51722E82C99812F0082E385 /* AppBackgroundTaskManager.swift */,
+			);
+			path = AppBackgroundTask;
+			sourceTree = "<group>";
+		};
 		E5224C352C8AB9CD00E205FD = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +271,7 @@
 		E5224C752C8AEDFB00E205FD /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				E51722E72C9981140082E385 /* AppBackgroundTask */,
 				E564CFFA2C91989500E48AE1 /* DIContainer */,
 				E5224C412C8AB9CD00E205FD /* AppDelegate.swift */,
 				E564CFBF2C8F035200E48AE1 /* AppConfiguration.swift */,
@@ -478,6 +502,7 @@
 		E564CFE92C917F7300E48AE1 /* LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
+				E51722E22C997AF80082E385 /* QuoteScheduleUserDefaultsStorage */,
 				E5247D032C97E5430084817D /* QuoteCategoryUserDefaultsStorage */,
 				E564CFF02C9180A300E48AE1 /* FavoriteQuotesCoreDataStorage */,
 				E5247D002C97E4B30084817D /* UserDefaultsStorage */,
@@ -731,6 +756,7 @@
 				E564CFFE2C91997000E48AE1 /* FetchFavoriteQuotesUseCase.swift in Sources */,
 				E564CFEE2C917FC700E48AE1 /* CoreDataStorage.xcdatamodeld in Sources */,
 				E564CFE62C8FFF8600E48AE1 /* FetchRandomQuoteUseCase.swift in Sources */,
+				E51722E42C997B2C0082E385 /* QuoteScheduleStorage.swift in Sources */,
 				E564D00B2C9300B400E48AE1 /* HomeViewContoller+TableView.swift in Sources */,
 				E5224C422C8AB9CD00E205FD /* AppDelegate.swift in Sources */,
 				E564CFD62C8FDF9600E48AE1 /* Endpoint.swift in Sources */,
@@ -739,6 +765,7 @@
 				E564CFE02C8FF83600E48AE1 /* QuoteRequestDTO+Mapping.swift in Sources */,
 				E5247D022C97E5200084817D /* UserDefaultsStorage.swift in Sources */,
 				E564CFF42C9181AF00E48AE1 /* FavoriteQuotesStorageImpl.swift in Sources */,
+				E51722E92C99812F0082E385 /* AppBackgroundTaskManager.swift in Sources */,
 				E564CFBC2C8EF36400E48AE1 /* Quote.swift in Sources */,
 				E564CFAF2C8EE72D00E48AE1 /* UIViewControler+Extension.swift in Sources */,
 				E564CFA52C8EDEB600E48AE1 /* BaseViewModel.swift in Sources */,
@@ -757,6 +784,7 @@
 				E564CFCC2C8FDD5100E48AE1 /* QuoteRepositoryImpl.swift in Sources */,
 				E564CFC02C8F035200E48AE1 /* AppConfiguration.swift in Sources */,
 				E564CFA32C8EDDB900E48AE1 /* BaseViewController.swift in Sources */,
+				E51722E62C997BDE0082E385 /* QuoteScheduleStorageImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
