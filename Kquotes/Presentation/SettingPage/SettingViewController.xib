@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="arrowLeftImage" destination="hEh-at-mk9" id="jXV-tW-EY2"/>
                 <outlet property="quoteScheduleTime" destination="Alq-6A-3Re" id="WhD-xb-4Oo"/>
+                <outlet property="scheduleDescription" destination="nDa-Iq-nw5" id="ocu-uJ-aMT"/>
                 <outlet property="tagCollectionView" destination="k0Z-xx-hQg" id="nXt-Ta-yGH"/>
                 <outlet property="tagCollectionViewHeight" destination="OaR-ep-g3t" id="Muy-yG-Jiw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -53,30 +54,40 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Quote schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7N-uA-cG2">
-                            <rect key="frame" x="32" y="269.66666666666669" width="208" height="26.666666666666686"/>
+                            <rect key="frame" x="32" y="269.66666666666669" width="220" height="26.666666666666686"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="220" id="Y7B-vO-tHv"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Alq-6A-3Re">
-                            <rect key="frame" x="211" y="265" width="150" height="36"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="150" id="xUL-fa-yGs"/>
-                            </constraints>
+                            <rect key="frame" x="264" y="265" width="97" height="36"/>
                         </datePicker>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily quote schedule is not set" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDa-Iq-nw5">
+                            <rect key="frame" x="32" y="308.33333333333331" width="329" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" systemColor="systemGray2Color"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Alq-6A-3Re" secondAttribute="trailing" constant="32" id="60F-7E-JdI"/>
                         <constraint firstItem="Alq-6A-3Re" firstAttribute="centerY" secondItem="T7N-uA-cG2" secondAttribute="centerY" id="BE6-LE-1L4"/>
                         <constraint firstItem="k0Z-xx-hQg" firstAttribute="leading" secondItem="v5p-Jz-neT" secondAttribute="leading" constant="32" id="CTJ-sv-qSK"/>
+                        <constraint firstItem="Alq-6A-3Re" firstAttribute="leading" secondItem="T7N-uA-cG2" secondAttribute="trailing" constant="12" id="FYA-Cb-Uio"/>
                         <constraint firstItem="T7N-uA-cG2" firstAttribute="leading" secondItem="v5p-Jz-neT" secondAttribute="leading" constant="32" id="Ftq-OP-YV2"/>
+                        <constraint firstAttribute="trailing" secondItem="nDa-Iq-nw5" secondAttribute="trailing" constant="32" id="M9m-DB-0TF"/>
                         <constraint firstItem="hEh-at-mk9" firstAttribute="top" secondItem="v5p-Jz-neT" secondAttribute="top" constant="8" id="a6R-Bz-Ifr"/>
+                        <constraint firstItem="nDa-Iq-nw5" firstAttribute="top" secondItem="T7N-uA-cG2" secondAttribute="bottom" constant="12" id="hML-Ne-oPw"/>
                         <constraint firstItem="SOK-lH-L3o" firstAttribute="top" secondItem="hEh-at-mk9" secondAttribute="bottom" constant="24" id="nGd-AY-hfc"/>
                         <constraint firstItem="k0Z-xx-hQg" firstAttribute="top" secondItem="SOK-lH-L3o" secondAttribute="bottom" constant="12" id="q8f-V6-3TH"/>
                         <constraint firstItem="T7N-uA-cG2" firstAttribute="top" secondItem="k0Z-xx-hQg" secondAttribute="bottom" constant="24" id="uAy-F2-XQk"/>
                         <constraint firstAttribute="trailing" secondItem="k0Z-xx-hQg" secondAttribute="trailing" constant="32" id="vOc-nt-EIc"/>
                         <constraint firstItem="hEh-at-mk9" firstAttribute="leading" secondItem="v5p-Jz-neT" secondAttribute="leading" constant="32" id="vs2-61-wlH"/>
+                        <constraint firstItem="nDa-Iq-nw5" firstAttribute="leading" secondItem="v5p-Jz-neT" secondAttribute="leading" constant="32" id="yfo-gh-DNh"/>
                         <constraint firstItem="SOK-lH-L3o" firstAttribute="leading" secondItem="v5p-Jz-neT" secondAttribute="leading" constant="32" id="z14-M0-bTQ"/>
                     </constraints>
                 </view>
@@ -99,6 +110,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

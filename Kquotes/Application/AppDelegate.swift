@@ -67,14 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
-            
-        if let quoteText = userInfo["quote"] as? String,
-           let author = userInfo["author"] as? String,
-           let category = userInfo["category"] as? String {
-            
-            let fetchedQuote = Quote(quote: quoteText, author: author, category: category)
-            NotificationCenter.default.post(name: Notification.Name("backgroundFetchedQuote"), object: nil, userInfo: ["quote": fetchedQuote])
-        }
+        
+        NotificationCenter.default.post(name: Notification.Name("backgroundFetchedQuote"), object: nil)
     }
 }

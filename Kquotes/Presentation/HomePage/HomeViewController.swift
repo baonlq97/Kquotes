@@ -134,11 +134,6 @@ extension HomeViewController {
     
     @objc
     private func updateQuoteLabel(_ notification: Notification) {
-        guard let userInfo = notification.userInfo,
-              let newQuote = userInfo["quote"] as? Quote else {
-            return
-        }
-        
         DispatchQueue.main.async {
             self.homeViewModel?.fetchRandomQuote()
         }

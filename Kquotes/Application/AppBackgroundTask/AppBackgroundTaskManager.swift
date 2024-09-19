@@ -86,7 +86,6 @@ class BackgroundTaskManager {
         content.title = "Quote of the Day"
         content.body = quote.quote
         content.sound = .default
-        content.userInfo = ["quote": quote.quote, "author": quote.author, "category": quote.category]
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
