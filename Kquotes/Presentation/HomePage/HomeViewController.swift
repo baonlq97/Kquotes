@@ -13,6 +13,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var loadMoreLabel: UILabel!
     @IBOutlet weak var favoriteImage: UIImageView!
+    @IBOutlet weak var shareImage: UIImageView!
     @IBOutlet weak var favoriteTableView: UITableView!
     @IBOutlet weak var homeBookmarkToggleImage: UIImageView!
     
@@ -40,6 +41,9 @@ class HomeViewController: BaseViewController {
         
         favoriteImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.favoriteImageTouched(_:))))
         favoriteImage.isUserInteractionEnabled = true
+        
+        shareImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.shareImageTouched(_:))))
+        shareImage.isUserInteractionEnabled = true
         
         homeBookmarkToggleImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.homeBookmarkToggleImageTouched(_:))))
         homeBookmarkToggleImage.isUserInteractionEnabled = true
@@ -130,6 +134,21 @@ extension HomeViewController {
                 }
             })
         }
+    }
+    
+    @objc
+    private func shareImageTouched(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard let quote = homeViewModel?.randomQuote else { return }
+        
+        let textToShare = "\(quote.quote)" + "\n\n" + "- \(quote.author) -"
+        let activityViewController = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
+        
+        if let popoverController = activityViewController.popoverPresentationController {
+            popoverController.sourceView = shareImage
+            popoverController.sourceRect = shareImage.bounds
+        }
+        
+        present(activityViewController, animated: true, completion: nil)
     }
     
     @objc
