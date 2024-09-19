@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Quote: Equatable {
+struct Quote: Equatable, Codable {
     let quote: String
     let author: String
     let category: String
