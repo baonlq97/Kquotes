@@ -33,7 +33,7 @@ class SettingViewController: BaseViewController {
         let leftAlignedLayout = LeftAlignedCollectionViewFlowLayout()
         leftAlignedLayout.minimumInteritemSpacing = 8
         leftAlignedLayout.minimumLineSpacing = 8
-        leftAlignedLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        leftAlignedLayout.sectionInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
         tagCollectionView.collectionViewLayout = leftAlignedLayout
         
         tagCollectionView.delegate = self

@@ -62,7 +62,7 @@ extension SettingViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         let labelWidth = (label as NSString).size(withAttributes: [.font: UIFont.systemFont(ofSize: 17)]).width
         
-        let padding: CGFloat = 24
+        let padding: CGFloat = 32
         let cellWidth = labelWidth + padding
         
         return CGSize(width: cellWidth, height: 48)
