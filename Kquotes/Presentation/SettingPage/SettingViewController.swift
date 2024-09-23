@@ -105,8 +105,8 @@ extension SettingViewController {
             DispatchQueue.main.async {
                 switch settings.authorizationStatus {
                 case .authorized, .provisional:
-                    BackgroundTaskManager.shared.scheduleBackgroundTask()
                     QuoteScheduleStorageImpl.shared.scheduleTime = self?.tempScheduleTime
+                    BackgroundTaskManager.shared.scheduleBackgroundTask()
                     self?.setScheduleDescription()
                 case .denied:
                     self?.showNotificationPermissionAlert()
