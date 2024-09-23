@@ -52,7 +52,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         if let quotes = self.homeViewModel?.favoriteQuotes {
             cell.bind(quote: quotes[indexPath.row])
-            cell.privateButtonTouched = { [weak self] quote in
+            cell.favoriteButtonTouched = { [weak self] quote in
                 self?.homeViewModel?.deleteFavoriteQuote(quote: quote, completion: {
                     DispatchQueue.main.async {
                         // Check if current quote is the same as deleted quote
@@ -63,6 +63,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                         tableView.reloadData()
                     }
                 })
+            }
+            
+            cell.shareButtonTouched = { [weak self] quote in
+                guard let self = self else { return }
+                let textToShare = "\(quote.quote)" + "\n\n" + "- \(quote.author) -"
+                let activityViewController = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
+                
+                if let popoverController = activityViewController.popoverPresentationController {
+                    popoverController.sourceView = tableView
+                    popoverController.sourceRect = tableView.rectForRow(at: indexPath)
+                }
+                
+                self.present(activityViewController, animated: true, completion: nil)
             }
         }
         
