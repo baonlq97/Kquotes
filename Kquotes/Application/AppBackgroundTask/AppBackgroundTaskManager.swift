@@ -43,8 +43,8 @@ class BackgroundTaskManager {
         let calendar = Calendar.current
         print("Current timezone: \(calendar.timeZone)")
         
-        // Calculate the background task time (5 minutes before the scheduled time)
-        let backgroundTaskTime = calendar.date(byAdding: .minute, value: -5, to: scheduledTime) ?? scheduledTime
+        // Calculate the background task time (1 minutes before the scheduled time)
+        let backgroundTaskTime = calendar.date(byAdding: .minute, value: -1, to: scheduledTime) ?? scheduledTime
         
         var dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: Date())
         let backgroundTaskComponents = calendar.dateComponents([.hour, .minute], from: backgroundTaskTime)
@@ -89,6 +89,22 @@ class BackgroundTaskManager {
     }
     
     private func handleAppRefresh(task: BGAppRefreshTask) {
+        if fetchQuoteUseCase == nil {
+            let transferService = AppDIContainer().apiDataTransferService
+            let favoriteStorage = AppDIContainer().favoriteQuotesStorage()
+            let repository = QuoteRepositoryImpl(dataTransferService: transferService,
+                                                 localStorage: favoriteStorage)
+            fetchQuoteUseCase = FetchRandomQuoteUseCaseImpl(quoteRepository: repository)
+        }
+        
+        if categoryManager == nil {
+            categoryManager = QuoteCategoryStorageImpl.shared
+        }
+        
+        if (quoteScheduledManager == nil) {
+            quoteScheduledManager = QuoteScheduleStorageImpl.shared
+        }
+        
         guard let fetchQuoteUseCase = fetchQuoteUseCase,
               let categoryManager = categoryManager else {
             task.setTaskCompleted(success: false)
@@ -121,6 +137,8 @@ class BackgroundTaskManager {
     }
     
     private func scheduleLocalNotification(with quote: Quote) {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        
         let content = UNMutableNotificationContent()
         content.title = "Quote of the Day"
         content.body = quote.quote
@@ -133,7 +151,7 @@ class BackgroundTaskManager {
         var dateComponents = calendar.dateComponents([.hour, .minute], from: scheduledTime)
         dateComponents.second = 0
 
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: "com.brandon.Kquotes.dailyQuote", content: content, trigger: trigger)
 
         UNUserNotificationCenter.current().add(request) { error in

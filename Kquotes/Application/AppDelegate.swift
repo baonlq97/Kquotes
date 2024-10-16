@@ -27,12 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let repository = QuoteRepositoryImpl(dataTransferService: transferService,
                                              localStorage: favoriteStorage)
-        fetchQuoteUseCase = FetchRandomQuoteUseCaseImpl(quoteRepository: repository)
         
         requestNotificationPermission()
         
         let backgroundTaskManager = BackgroundTaskManager.shared
-        backgroundTaskManager.fetchQuoteUseCase = fetchQuoteUseCase
+        backgroundTaskManager.fetchQuoteUseCase = FetchRandomQuoteUseCaseImpl(quoteRepository: repository)
         backgroundTaskManager.categoryManager = QuoteCategoryStorageImpl.shared
         backgroundTaskManager.quoteScheduledManager = QuoteScheduleStorageImpl.shared
         backgroundTaskManager.registerBackgroundTasks()
