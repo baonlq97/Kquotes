@@ -25,7 +25,6 @@ class BackgroundTaskManager {
     }
     
     func scheduleBackgroundTask() {
-        // Log pending tasks before cancellation
         BGTaskScheduler.shared.getPendingTaskRequests { tasks in
             print("Number of pending tasks before cancellation: \(tasks.count)")
         }
@@ -41,13 +40,9 @@ class BackgroundTaskManager {
         print("Scheduled time from storage: \(scheduledTime)")
         
         let calendar = Calendar.current
-        print("Current timezone: \(calendar.timeZone)")
-        
-        // Calculate the background task time (1 minutes before the scheduled time)
-        let backgroundTaskTime = calendar.date(byAdding: .minute, value: -1, to: scheduledTime) ?? scheduledTime
         
         var dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: Date())
-        let backgroundTaskComponents = calendar.dateComponents([.hour, .minute], from: backgroundTaskTime)
+        let backgroundTaskComponents = calendar.dateComponents([.hour, .minute], from: scheduledTime)
         
         dateComponents.hour = backgroundTaskComponents.hour
         dateComponents.minute = backgroundTaskComponents.minute
@@ -89,6 +84,8 @@ class BackgroundTaskManager {
     }
     
     private func handleAppRefresh(task: BGAppRefreshTask) {
+        scheduleBackgroundTask() // Reschedule for the next day
+        
         if fetchQuoteUseCase == nil {
             let transferService = AppDIContainer().apiDataTransferService
             let favoriteStorage = AppDIContainer().favoriteQuotesStorage()
@@ -120,7 +117,6 @@ class BackgroundTaskManager {
                         self?.quoteScheduledManager?.scheduledQuote = quote
                     }
                     task.setTaskCompleted(success: true)
-                    self?.scheduleBackgroundTask() // Reschedule for the next day
                 case .failure(let error):
                     print("Error fetching quote: \(error)")
                     task.setTaskCompleted(success: false)
@@ -143,22 +139,15 @@ class BackgroundTaskManager {
         content.title = "Quote of the Day"
         content.body = quote.quote
         content.sound = .default
-
-        guard let scheduledTime = QuoteScheduleStorageImpl.shared.scheduleTime else { return }
         
-        let calendar = Calendar.current
-        
-        var dateComponents = calendar.dateComponents([.hour, .minute], from: scheduledTime)
-        dateComponents.second = 0
-
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         let request = UNNotificationRequest(identifier: "com.brandon.Kquotes.dailyQuote", content: content, trigger: trigger)
 
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print("Error scheduling notification: \(error)")
             } else {
-                print("Daily quote notification scheduled for \(dateComponents) in user's local time")
+                print("Immediate quote notification scheduled")
             }
         }
     }
